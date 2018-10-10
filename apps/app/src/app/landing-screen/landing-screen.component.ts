@@ -37,6 +37,18 @@ export class LandingScreenComponent implements OnInit {
 
   constructor(private store: Store<RootState>, private urlbuilder: UrlBuilder,private elementRef: ElementRef) { }
 
+  historyData:any = [
+    {
+      title :"Item A"
+    },
+    {
+      title :"Item A"
+    },
+    {
+      title :"Item A"
+    }
+  ]
+
   public tree: TreeModel = {
     value: 'Programming languages',
     additionalData: 'folder',
