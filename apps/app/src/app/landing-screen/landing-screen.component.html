@@ -2,20 +2,20 @@
 
   <div class="menu-list">
     <div style="margin-top: -50px;">
-        <img height="50px" src="assets/images/reflexLogo2.png">
+      <img height="50px" src="assets/images/reflexLogo2.png">
     </div>
     <div class="tabs-left">
       <ul class="nav nav-tabs">
-        <li  (click)="navTabClick('tree-content')"><a href="#" data-toggle="tab"><span class="glyphicon glyphicon-folder-open"></span></a></li>
-        <li class="active" (click)="navTabClick('node-content')" ><a href="#" data-toggle="tab"><span class="glyphicon glyphicon-hdd"></span></a></li>
-        <li (click)="navTabClick('history-content')" ><a href="#" data-toggle="tab"><span class="glyphicon glyphicon-time"></span></a></li>
-        <li (click)="navTabClick('settings-content')" ><a href="#" data-toggle="tab"><span class="glyphicon glyphicon-cog"></span></a></li>
+        <li (click)="navTabClick('tree-content')"><a href="#" data-toggle="tab"><span class="glyphicon glyphicon-folder-open"></span></a></li>
+        <li class="active" (click)="navTabClick('node-content')"><a href="#" data-toggle="tab"><span class="glyphicon glyphicon-hdd"></span></a></li>
+        <li (click)="navTabClick('history-content')"><a href="#" data-toggle="tab"><span class="glyphicon glyphicon-time"></span></a></li>
+        <li (click)="navTabClick('settings-content')"><a href="#" data-toggle="tab"><span class="glyphicon glyphicon-cog"></span></a></li>
       </ul>
     </div><!-- /tabbable -->
   </div>
   <div class="menu-window">
 
-    <div class="tree-content" style="padding-top:10px" >
+    <div class="tree-content" style="padding-top:10px">
 
       <form class="example-form">
         <mat-form-field class="example-full-width">
@@ -27,34 +27,32 @@
 
     </div>
 
-  <div class="node-content">
-    <span>Nodes</span>
-</div>
-<div class="history-content">
-    <ul>
-      <li *ngFor="let historyItem of historyData">{{ historyItem.title }}</li>
-    </ul>
-</div>
-<div class="settings-content">
-<span>Settings</span>
-</div>
+    <div class="node-content">
+      <span>Nodes</span>
+    </div>
+    <div class="history-content">
+      <ul>
+        <li *ngFor="let historyItem of historyData">{{ historyItem.title }}</li>
+      </ul>
+    </div>
+    <div class="settings-content">
+      <span>Settings</span>
+    </div>
   </div>
   <div class="editor">
-      <div class="editor-container">
-          <div id = "background">
-              <div id = "console">
-                  <p id="consoletext">Write your command here</p>
-                  <textarea rows = "1" id = "textinput" onkeydown = "checkInput();"></textarea>
-              </div>
-          </div>
-          <div class="output-conatiner">
-              <label >Output</label>
-              <textarea id="output"
-                rows="10"
-                wrap="hard" disabled>
-              </textarea>
-          </div>
+    <div class="editor-container">
+      <div id="background">
+        <div id="console">
+          <p id="consoletext">Write your command here</p>
+          <textarea rows="1" id="textinput" onkeydown="checkInput();"></textarea>
+        </div>
       </div>
+      <div class="output-conatiner">
+        <label>Output</label>
+        <textarea id="output" rows="10" wrap="hard" disabled>
+              </textarea>
+      </div>
+    </div>
   </div>
 
 </div>

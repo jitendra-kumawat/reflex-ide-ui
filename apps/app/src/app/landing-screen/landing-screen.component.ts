@@ -37,17 +37,7 @@ export class LandingScreenComponent implements OnInit {
 
   constructor(private store: Store<RootState>, private urlbuilder: UrlBuilder,private elementRef: ElementRef) { }
 
-  historyData:any = [
-    {
-      title :"Item A"
-    },
-    {
-      title :"Item A"
-    },
-    {
-      title :"Item A"
-    }
-  ]
+  historyData:any = [];
 
   public tree: TreeModel = {
     value: 'Programming languages',
@@ -71,9 +61,9 @@ export class LandingScreenComponent implements OnInit {
 
   ngOnInit() {
     this.elementRef.nativeElement.getElementsByClassName('tree-content')[0].style.display ='none';
-       this.elementRef.nativeElement.getElementsByClassName('node-content')[0].style.display ='';
-       this.elementRef.nativeElement.getElementsByClassName('history-content')[0].style.display ='none';
-       this.elementRef.nativeElement.getElementsByClassName('settings-content')[0].style.display ='none';
+    this.elementRef.nativeElement.getElementsByClassName('node-content')[0].style.display ='';
+    this.elementRef.nativeElement.getElementsByClassName('history-content')[0].style.display ='none';
+    this.elementRef.nativeElement.getElementsByClassName('settings-content')[0].style.display ='none';
     this.usersCount$ = this.store.select(getUserCountSelector);
     this.usersCount$.subscribe(this.onUserCountChange.bind(this));
   }
