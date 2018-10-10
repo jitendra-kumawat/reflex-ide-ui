@@ -8,9 +8,12 @@ import {
   getRequestConfig,
   UrlBuilder
   } from '@reflex-ide/common';
-import { TreeModel } from 'ng2-tree';
 import { Observable } from 'rxjs/Observable';
 import { GET_USERS_COUNT_REQUEST } from './landing-screen-service-config';
+  import {
+    NodeEvent,
+    TreeModel
+    } from 'ng2-tree';
 
 import { RootState, ApplicationState } from '../+state/application.interfaces';
 import * as ApplicationActions from '../+state/application.actions';
@@ -29,6 +32,9 @@ export class LandingScreenComponent implements OnInit {
 
   public tree: TreeModel = {
     value: 'Programming languages',
+    settings: {
+      'isCollapsedOnInit': true
+    },
     children: [
       {
         value: 'Object-oriented',
@@ -53,6 +59,10 @@ export class LandingScreenComponent implements OnInit {
     else {
       this.userCount = undefined;
     }
+  }
+
+  handleSelected(event: NodeEvent) {
+    console.log(event)
   }
 
 }

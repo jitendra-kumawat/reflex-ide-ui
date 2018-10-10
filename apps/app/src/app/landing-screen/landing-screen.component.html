@@ -11,7 +11,9 @@
     </div><!-- /tabbable -->
   </div>
   <div class="menu-window">
-    <tree [tree]="tree"></tree>
+      <div class="tree-content">
+          <tree [tree]="tree" (nodeSelected)="handleSelected($event)"></tree>
+      </div>
   </div>
   <div class="editor">
   </div>
