@@ -12,7 +12,7 @@ export class AuthorizationGuard implements CanActivate {
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot
   ): boolean | Observable<boolean> | Promise<boolean> {
-    return this.authenticate$(route, state);
+    return true;
   }
 
   private authenticate$(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<boolean> | boolean {

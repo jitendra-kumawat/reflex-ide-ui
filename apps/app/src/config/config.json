@@ -5,7 +5,7 @@
   "copyright": "© $year Guavus",
   "urls": {
     "auth": "/oauth/1",
-    "base": "/",
+    "base": "http://192.168.152.19:5000",
     "um": "/api/v1"
   },
   "contextRoot": "/",
