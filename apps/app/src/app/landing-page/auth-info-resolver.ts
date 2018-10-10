@@ -5,7 +5,7 @@ import { Store } from "@ngrx/store";
 import { AuthState, selectUserState, UserDetails, UserStatus, selectStatusState } from "@guavus/auth";
 import { Observable } from "rxjs/Observable";
 import { OFFLINE_LOGIN_DATA, ISOFFLINE } from "@reflex-ide/common";
-import { loginResponse } from '@guavus/ui-kit-core';
+import { loginResponse } from '@guavus/core';
 @Injectable()
 export class AuthInfoResolver implements Resolve<any>{
   constructor(private store: Store<RootState>) { }
