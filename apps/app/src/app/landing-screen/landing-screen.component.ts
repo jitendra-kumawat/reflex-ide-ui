@@ -68,6 +68,12 @@ export class LandingScreenComponent implements OnInit {
     this.usersCount$.subscribe(this.onUserCountChange.bind(this));
   }
 
+  checkInput(event:any){
+    if (event.keyCode === 13) {
+      this.elementRef.nativeElement.getElementsByClassName('consoletext')[0].innerHTML += "\n"+event.target.value;
+    }
+  }
+
   onUserCountChange(userCount: any) {
     if (userCount) {
       this.userCount = userCount;

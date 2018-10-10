@@ -49,8 +49,8 @@
     <div class="editor-container">
       <div id="background">
         <div id="console">
-          <p id="consoletext">Write your command here</p>
-          <textarea rows="1" id="textinput" onkeydown="checkInput();"></textarea>
+          <textarea rows="5" class="consoletext" id="consoletext" disabled>Write your command here</textarea>
+          <textarea rows="1" class="textinput" id="textinput" (keyup)="checkInput($event);"></textarea>
         </div>
       </div>
       <div class="output-conatiner">
