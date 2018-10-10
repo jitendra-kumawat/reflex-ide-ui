@@ -1,13 +1,18 @@
 import {
   Component,
+  OnDestroy,
   OnInit,
-  ViewChild,
-  OnDestroy
-} from '@angular/core';
+  ViewChild
+  } from '@angular/core';
+import {
+  MatDialog,
+  MatDialogConfig,
+  MatDialogRef
+  } from '@angular/material';
 import {
   ActivatedRoute,
   Router
-} from '@angular/router';
+  } from '@angular/router';
 import {
   AuthUtils,
   ChangePassword,
@@ -17,32 +22,25 @@ import {
   RequestConfig,
   UserDetails,
   UserStatus
-} from '@guavus/auth';
+  } from '@guavus/auth';
 import {
   AppSwiticherData,
+  MatAlertComponent,
   ModuleItem,
   NavbarItem,
-  NavbarMenuItem,
-  MatAlertComponent
-} from '@guavus/smart-components';
-import { MatDialog, MatDialogConfig, MatDialogRef } from '@angular/material';
-import {
-  AboutAppComponent,
-  HeaderComponent,
-  updateYear,
-  YEAR_IDENTIFIER,
-} from '@guavus/smart-components';
+  NavbarMenuItem
+  } from '@guavus/smart-components';
+import { Store } from '@ngrx/store';
 import {
   appConfig,
   getRequestConfig,
   ProjectConfig,
   UrlBuilder
-} from '@reflex-ide/common';
+  } from '@reflex-ide/common';
 import {
   CHANGE_PASSWORD_REQUEST,
   LOGOUT_REQUEST
-} from '@reflex-ide/login';
-import { Store } from '@ngrx/store';
+  } from '@reflex-ide/login';
 import { isNil } from 'lodash';
 import { Subscription } from 'rxjs/Subscription';
 import { applicationConfig } from './config';
@@ -53,7 +51,13 @@ import {
   LOGOUT_MENUITEM_ID,
   PASSWORD_CHANGE_MESSAGE,
   POPUP_SUCCESS_TITLE
-} from './constants';
+  } from './constants';
+import {
+  AboutAppComponent,
+  HeaderComponent,
+  updateYear,
+  YEAR_IDENTIFIER,
+} from '@guavus/smart-components';
 import { ApplicationState } from '../+state/application.interfaces';
 
 @Component({
@@ -119,7 +123,7 @@ export class LandingPageComponent implements OnInit, OnDestroy {
     this.showSingleModule = headerConfig.showSingleModule;
     this.modules = headerConfig.modules;
     this.rightMenu = headerConfig.rightMenu;
-    this.appSwitcherData = appConfig.app_switcher;
+   //  this.appSwitcherData = appConfig.app_switcher;
   }
 
   setFooterProps(projectconfig: ProjectConfig) {
