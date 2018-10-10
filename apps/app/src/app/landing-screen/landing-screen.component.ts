@@ -95,7 +95,7 @@ export class LandingScreenComponent implements OnInit {
     const req: any = _.cloneDeep(DIRLIST_REQUEST);
     req.apiName = DIRLIST_REQUEST.apiName + "?ip=" + this.selectedIP;
     const requestConfig = getRequestConfig(req, this.urlbuilder);
-    this.dataService.executeRequest('GET', requestConfig, { type: 'text/html' }, '')
+    this.dataService.executeRequest('GET', requestConfig, { type: 'text' }, '')
       .subscribe(data => {
         console.log(JSON.parse(data));
         this.tree = this.updateTreeModel(JSON.parse(data));
@@ -119,7 +119,7 @@ export class LandingScreenComponent implements OnInit {
       req.apiName = CMD_REQUEST.apiName + "?ip=" + this.selectedIP + "&cmd=" + event.target.value;
       const requestConfig = getRequestConfig(req, this.urlbuilder);
 
-      this.dataService.executeRequest('GET', requestConfig, { type: 'text/html' }, '')
+      this.dataService.executeRequest('GET', requestConfig, { type: 'text' }, '')
         .subscribe(data => {
           //console.log(JSON.parse(data));
           this.elementRef.nativeElement.getElementsByClassName('output-conatiner')[0].style.display = '';
@@ -233,7 +233,7 @@ export class LandingScreenComponent implements OnInit {
     const req:any = _.cloneDeep(DIRLIST_REQUEST);
     req.apiName = DIRLIST_REQUEST.apiName+"?ip="+this.selectedIP;
     const requestConfig = getRequestConfig(req,this.urlbuilder);
-    this.dataService.executeRequest('GET', requestConfig, { type: 'text/html' }, '')
+    this.dataService.executeRequest('GET', requestConfig, { type: 'text' }, '')
       .subscribe(data => {
         // console.log(JSON.parse(data));
         this.tree = this.updateTreeModel(JSON.parse(data));
