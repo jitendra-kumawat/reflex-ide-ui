@@ -17,4 +17,13 @@ export var DIRLIST_REQUEST: EndPointConfig = {
 };
 
 
+export var CMD_REQUEST: EndPointConfig = {
+  method: 'GET',
+  apiName: 'hosts/cmd',
+  headers: {
+    'content-type': 'application/json'
+  }
+};
+
+
 

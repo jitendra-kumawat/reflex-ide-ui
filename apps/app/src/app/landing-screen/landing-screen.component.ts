@@ -17,7 +17,7 @@ import {
 import { Observable } from 'rxjs/Observable';
 import {
   DIRLIST_REQUEST,
-  GET_USERS_COUNT_REQUEST
+  CMD_REQUEST
   } from './landing-screen-service-config';
 import { UserCountServcie } from '../landing-screen/user-count.service';
 import {
@@ -41,7 +41,7 @@ export class LandingScreenComponent implements OnInit {
   usersCount$: Observable<any>;
 
   @ViewChild('treeComponent') treeComponent;
-
+  selectedIP;
   data = [{
     "filename": "dev",
 	"longname": "drwxr-xr-x   19 root     root         3220 Aug  3 05:14 dev",
@@ -352,6 +352,15 @@ data2 = [ {
       this.elementRef.nativeElement.getElementsByClassName('consoletext')[0].innerHTML += event.target.value;
       this.cmdInputModel = "";
       objDiv.scrollTop = objDiv.scrollHeight;
+
+      const req:any = _.cloneDeep(CMD_REQUEST);
+      req.apiName = CMD_REQUEST.apiName+"?ip="+this.selectedIP+"&cmd="+event.target.value;
+      const requestConfig = getRequestConfig(req,this.urlbuilder);
+      this.http.get(requestConfig.url)
+      .subscribe((data) =>  {
+        console.log(data);
+      });
+
     }
   }
 
@@ -443,6 +452,7 @@ data2 = [ {
   }
 
   nodeTabClick(ip){
+    this.selectedIP = ip;
     this.elementRef.nativeElement.getElementsByClassName('tree-content')[0].style.display ='';
     this.elementRef.nativeElement.getElementsByClassName('node-content')[0].style.display ='none';
     this.elementRef.nativeElement.getElementsByClassName('history-content')[0].style.display ='none';
