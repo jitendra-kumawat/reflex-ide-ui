@@ -5,7 +5,7 @@ import {
   ElementRef,
   OnInit,
   ViewChild
-  } from '@angular/core';
+} from '@angular/core';
 import { Store } from '@ngrx/store';
 import { EndPointConfig, DataService } from '@reflex-ide/common';
 import * as _ from 'lodash';
@@ -13,17 +13,17 @@ import {
   Ng2TreeSettings,
   NodeEvent,
   TreeModel
-  } from 'ng2-tree';
+} from 'ng2-tree';
 import { Observable } from 'rxjs/Observable';
 import {
   CMD_REQUEST,
   DIRLIST_REQUEST
-  } from './landing-screen-service-config';
+} from './landing-screen-service-config';
 import { UserCountServcie } from '../landing-screen/user-count.service';
 import {
   getRequestConfig,
   UrlBuilder,
-  } from '@reflex-ide/common';
+} from '@reflex-ide/common';
 
 import { RootState, ApplicationState } from '../+state/application.interfaces';
 import * as ApplicationActions from '../+state/application.actions';
@@ -49,17 +49,17 @@ export class LandingScreenComponent implements OnInit {
   isNodeSelected = false;
   isSettingSelected = false;
 
-  cmdInputModel:any = "";
+  cmdInputModel: any = "";
 
   constructor(private store: Store<RootState>,
-      private dataService: DataService,
-     private urlbuilder: UrlBuilder,private elementRef: ElementRef,private service: UserCountServcie,private http: HttpClient) { }
+    private dataService: DataService,
+    private urlbuilder: UrlBuilder, private elementRef: ElementRef, private service: UserCountServcie, private http: HttpClient) { }
 
-  historyData:any = [];
+  historyData: any = [];
   selectedDirectoryID = '';
 
 
-   treeSettings: Ng2TreeSettings = {
+  treeSettings: Ng2TreeSettings = {
     rootIsVisible: false
   };
 
@@ -68,38 +68,46 @@ export class LandingScreenComponent implements OnInit {
   };
 
   ngOnInit() {
-    this.elementRef.nativeElement.getElementsByClassName('tree-content')[0].style.display ='';
-    this.elementRef.nativeElement.getElementsByClassName('node-content')[0].style.display ='none';
-    this.elementRef.nativeElement.getElementsByClassName('history-content')[0].style.display ='none';
-    this.elementRef.nativeElement.getElementsByClassName('settings-content')[0].style.display ='none';
+    this.elementRef.nativeElement.getElementsByClassName('tree-content')[0].style.display = '';
+    this.elementRef.nativeElement.getElementsByClassName('node-content')[0].style.display = 'none';
+    this.elementRef.nativeElement.getElementsByClassName('history-content')[0].style.display = 'none';
+    this.elementRef.nativeElement.getElementsByClassName('settings-content')[0].style.display = 'none';
     this.usersCount$ = this.store.select(getUserCountSelector);
     this.usersCount$.subscribe(this.onUserCountChange.bind(this));
-    const req:any = _.cloneDeep(DIRLIST_REQUEST);
-    req.apiName = DIRLIST_REQUEST.apiName+"?ip="+this.selectedIP;
-    const requestConfig = getRequestConfig(req,this.urlbuilder);
+    const req: any = _.cloneDeep(DIRLIST_REQUEST);
+    req.apiName = DIRLIST_REQUEST.apiName + "?ip=" + this.selectedIP;
+    const requestConfig = getRequestConfig(req, this.urlbuilder);
     this.dataService.executeRequest('GET', requestConfig, { type: 'text/html' }, '')
       .subscribe(data => {
         console.log(JSON.parse(data));
         this.tree = this.updateTreeModel(JSON.parse(data));
       });
+
+    this.elementRef.nativeElement.getElementsByClassName('consoletext')[0].style.display = 'none';
+    this.elementRef.nativeElement.getElementsByClassName('output-conatiner')[0].style.display = 'none';
+
   }
 
-  checkInput(event:any){
+  checkInput(event: any) {
     if (event.keyCode === 13) {
+      this.elementRef.nativeElement.getElementsByClassName('consoletext')[0].style.display = '';
+
       const objDiv = this.elementRef.nativeElement.getElementsByClassName('consoletext')[0];
       this.elementRef.nativeElement.getElementsByClassName('consoletext')[0].innerHTML += event.target.value;
       this.cmdInputModel = "";
       objDiv.scrollTop = objDiv.scrollHeight;
 
-      const req:any = _.cloneDeep(CMD_REQUEST);
-      req.apiName = CMD_REQUEST.apiName+"?ip="+this.selectedIP+"&cmd="+event.target.value;
-      const requestConfig = getRequestConfig(req,this.urlbuilder);
+      const req: any = _.cloneDeep(CMD_REQUEST);
+      req.apiName = CMD_REQUEST.apiName + "?ip=" + this.selectedIP + "&cmd=" + event.target.value;
+      const requestConfig = getRequestConfig(req, this.urlbuilder);
 
       this.dataService.executeRequest('GET', requestConfig, { type: 'text/html' }, '')
-      .subscribe(data => {
-        //console.log(JSON.parse(data));
-        this.elementRef.nativeElement.getElementsByClassName('output')[0].innerHTML = data;
-      });
+        .subscribe(data => {
+          //console.log(JSON.parse(data));
+          this.elementRef.nativeElement.getElementsByClassName('output-conatiner')[0].style.display = '';
+
+          this.elementRef.nativeElement.getElementsByClassName('output')[0].innerHTML = data;
+        });
 
     }
   }
@@ -115,54 +123,54 @@ export class LandingScreenComponent implements OnInit {
 
   updateTreeModel(data): any {
 
-    const root:Object = {};
+    const root: Object = {};
     root['value'] = 'root';
     root['id'] = 'root';
     root['children'] = [];
     root['additionalData'] = 'folder';
 
-      if (data && data.length > 0) {
-        data.forEach(element => {
-           const item:Object = {};
-           item['value'] = element.filename;
-           item['id'] = element.filename;
-           item['path'] = element.filename;
+    if (data && data.length > 0) {
+      data.forEach(element => {
+        const item: Object = {};
+        item['value'] = element.filename;
+        item['id'] = element.filename;
+        item['path'] = element.filename;
 
-          if (element.longname.startsWith('d')){
-            item['children'] = []
+        if (element.longname.startsWith('d')) {
+          item['children'] = []
 
-          }
-           item['additionalData'] = element.longname.startsWith('d') ? 'folder' : 'file';
-         console.log(element.filename + ' rr ' )
-         root["children"].push(item);
-        });
-      }
+        }
+        item['additionalData'] = element.longname.startsWith('d') ? 'folder' : 'file';
+        console.log(element.filename + ' rr ')
+        root["children"].push(item);
+      });
+    }
 
-      return root;
+    return root;
   }
 
   updateChildrenTreeModel(data): any {
 
     const root = [];
 
-      if (data && data.length > 0) {
-        data.forEach(element => {
-           const item:Object = {};
-           item['value'] = element.filename;
-           item['id'] = element.filename;
-           item['path'] = this.selectedDirectoryID + '/' + element.filename;
+    if (data && data.length > 0) {
+      data.forEach(element => {
+        const item: Object = {};
+        item['value'] = element.filename;
+        item['id'] = element.filename;
+        item['path'] = this.selectedDirectoryID + '/' + element.filename;
 
-          if (element.longname.startsWith('d')){
-            item['children'] = []
-          }
-           item['additionalData'] = element.longname.startsWith('d') ? 'folder' : 'file';
-         console.log(element.filename + ' rr ' )
-         root["children"].push(item);
-        });
+        if (element.longname.startsWith('d')) {
+          item['children'] = []
+        }
+        item['additionalData'] = element.longname.startsWith('d') ? 'folder' : 'file';
+        console.log(element.filename + ' rr ')
+        root["children"].push(item);
+      });
 
-      }
+    }
 
-      return root;
+    return root;
   }
 
   handleSelected(event: NodeEvent) {
@@ -181,7 +189,7 @@ export class LandingScreenComponent implements OnInit {
 
     this.selectedDirectoryID = event.node.node.value as string;
     const selectedDir = this.treeComponent.getControllerByNodeId(this.selectedDirectoryID);
-   this.historyData.push({"title":this.selectedDirectoryID});
+    this.historyData.push({ "title": this.selectedDirectoryID });
     const newNode: TreeModel = this.updateChildrenTreeModel(this.data2);
 
     selectedDir.setChildren(newNode);
@@ -195,13 +203,13 @@ export class LandingScreenComponent implements OnInit {
 
   }
 
-  nodeTabClick(ip){
+  nodeTabClick(ip) {
 
     this.selectedIP = ip;
-    this.elementRef.nativeElement.getElementsByClassName('tree-content')[0].style.display ='';
-    this.elementRef.nativeElement.getElementsByClassName('node-content')[0].style.display ='none';
-    this.elementRef.nativeElement.getElementsByClassName('history-content')[0].style.display ='none';
-    this.elementRef.nativeElement.getElementsByClassName('settings-content')[0].style.display ='none';
+    this.elementRef.nativeElement.getElementsByClassName('tree-content')[0].style.display = '';
+    this.elementRef.nativeElement.getElementsByClassName('node-content')[0].style.display = 'none';
+    this.elementRef.nativeElement.getElementsByClassName('history-content')[0].style.display = 'none';
+    this.elementRef.nativeElement.getElementsByClassName('settings-content')[0].style.display = 'none';
     document.getElementsByClassName("node")[0].classList.remove("active");
     document.getElementsByClassName("home")[0].classList.add("active");
     const req:any = _.cloneDeep(DIRLIST_REQUEST);
@@ -222,34 +230,33 @@ export class LandingScreenComponent implements OnInit {
     }
   }
 
-  navTabClick(key)
-  {
+  navTabClick(key) {
 
     switch (key) {
       case 'tree-content':
-       this.elementRef.nativeElement.getElementsByClassName('tree-content')[0].style.display ='';
-       this.elementRef.nativeElement.getElementsByClassName('node-content')[0].style.display ='none';
-       this.elementRef.nativeElement.getElementsByClassName('history-content')[0].style.display ='none';
-       this.elementRef.nativeElement.getElementsByClassName('settings-content')[0].style.display ='none';
+        this.elementRef.nativeElement.getElementsByClassName('tree-content')[0].style.display = '';
+        this.elementRef.nativeElement.getElementsByClassName('node-content')[0].style.display = 'none';
+        this.elementRef.nativeElement.getElementsByClassName('history-content')[0].style.display = 'none';
+        this.elementRef.nativeElement.getElementsByClassName('settings-content')[0].style.display = 'none';
 
         break;
       case 'node-content':
-     this.elementRef.nativeElement.getElementsByClassName('tree-content')[0].style.display ='none';
-     this.elementRef.nativeElement.getElementsByClassName('node-content')[0].style.display ='';
-     this.elementRef.nativeElement.getElementsByClassName('history-content')[0].style.display ='none';
-     this.elementRef.nativeElement.getElementsByClassName('settings-content')[0].style.display ='none';
+        this.elementRef.nativeElement.getElementsByClassName('tree-content')[0].style.display = 'none';
+        this.elementRef.nativeElement.getElementsByClassName('node-content')[0].style.display = '';
+        this.elementRef.nativeElement.getElementsByClassName('history-content')[0].style.display = 'none';
+        this.elementRef.nativeElement.getElementsByClassName('settings-content')[0].style.display = 'none';
         break;
       case 'history-content':
-     this.elementRef.nativeElement.getElementsByClassName('tree-content')[0].style.display ='none';
-     this.elementRef.nativeElement.getElementsByClassName('node-content')[0].style.display ='none';
-     this.elementRef.nativeElement.getElementsByClassName('history-content')[0].style.display ='';
-     this.elementRef.nativeElement.getElementsByClassName('settings-content')[0].style.display ='none';
+        this.elementRef.nativeElement.getElementsByClassName('tree-content')[0].style.display = 'none';
+        this.elementRef.nativeElement.getElementsByClassName('node-content')[0].style.display = 'none';
+        this.elementRef.nativeElement.getElementsByClassName('history-content')[0].style.display = '';
+        this.elementRef.nativeElement.getElementsByClassName('settings-content')[0].style.display = 'none';
         break;
       case 'settings-content':
-     this.elementRef.nativeElement.getElementsByClassName('tree-content')[0].style.display ='none';
-     this.elementRef.nativeElement.getElementsByClassName('node-content')[0].style.display ='none';
-     this.elementRef.nativeElement.getElementsByClassName('history-content')[0].style.display ='none';
-     this.elementRef.nativeElement.getElementsByClassName('settings-content')[0].style.display ='';
+        this.elementRef.nativeElement.getElementsByClassName('tree-content')[0].style.display = 'none';
+        this.elementRef.nativeElement.getElementsByClassName('node-content')[0].style.display = 'none';
+        this.elementRef.nativeElement.getElementsByClassName('history-content')[0].style.display = 'none';
+        this.elementRef.nativeElement.getElementsByClassName('settings-content')[0].style.display = '';
         break;
 
       default:
