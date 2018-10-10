@@ -45,7 +45,12 @@
       </ul>
     </div>
     <div class="settings-content">
-      <span>Settings</span>
+      <label style="font-weight: normal">Change Theme </label> <select>
+        <option>indigo-pink</option>
+        <option>purple-green</option>
+        <option>deeppurple-amber</option>
+        <option>light-blue</option>
+      </select>
     </div>
   </div>
   <div class="editor">
@@ -53,7 +58,7 @@
       <div id="background">
         <div id="console">
           <textarea rows="5" class="consoletext" id="consoletext" disabled></textarea>
-          <textarea rows="1" class="textinput2" id="textinput" (keyup)="checkInput($event);" [(ngModel)]="cmdInputModel"></textarea>
+          <textarea autofocus rows="1" class="textinput2" id="textinput" (keyup)="checkInput($event);" [(ngModel)]="cmdInputModel"></textarea>
         </div>
       </div>
       <div class="output-conatiner">
