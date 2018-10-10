@@ -345,18 +345,22 @@ data2 = [ {
     this.usersCount$ = this.store.select(getUserCountSelector);
     this.usersCount$.subscribe(this.onUserCountChange.bind(this));
     const req:any = _.cloneDeep(DIRLIST_REQUEST);
-    req.apiName = DIRLIST_REQUEST.apiName+"?ip="+this.selectedIP;
+    req.apiName = "http://192.168.152.19:5000/" + DIRLIST_REQUEST.apiName+"?ip="+this.selectedIP;
     const requestConfig = getRequestConfig(req,this.urlbuilder);
-    // this.http.request("GET",requestConfig.url)
-    // .subscribe((data) =>  {
-    //   console.log(data);
-    //   this.tree = this.updateTreeModel(data);
-    // });
 
-    this.dataService.executeRequest('GET', requestConfig, { type: 'json' }, '')
-      .subscribe(data => {
+    /*this.http.request("GET",requestConfig.url)
+    .subscribe((data) =>  {
+      console.log(data);
+      this.tree = this.updateTreeModel(data);
+    });*/
+
+    this.http.get(req.apiName)
+      .subscribe((data: any) => {
+        // Data extraction from the HTTP response is already done
+        // Display the result
         console.log(data);
-      })
+        this.tree = this.updateTreeModel(data);
+      });
     // this.tree = this.updateTreeModel(this.data) as TreeModel;
   }
 
@@ -368,9 +372,8 @@ data2 = [ {
       objDiv.scrollTop = objDiv.scrollHeight;
 
       const req:any = _.cloneDeep(CMD_REQUEST);
-      req.apiName = CMD_REQUEST.apiName+"?ip="+this.selectedIP+"&cmd="+event.target.value;
-      const requestConfig = getRequestConfig(req,this.urlbuilder);
-      this.http.get(requestConfig.url)
+      req.apiName = "http://192.168.152.19:5000/" + CMD_REQUEST.apiName+"?ip="+this.selectedIP+"&cmd="+event.target.value;
+      this.http.get(req.apiName)
       .subscribe((data) =>  {
         console.log(data);
       });
@@ -481,12 +484,13 @@ data2 = [ {
 
     const req:any = _.cloneDeep(DIRLIST_REQUEST);
     req.apiName = DIRLIST_REQUEST.apiName+"?ip="+ip;
-    const requestConfig = getRequestConfig(req,this.urlbuilder);
-    this.http.request("GET",requestConfig.url)
-    .subscribe((data) =>  {
-      console.log(data);
-      this.tree =  this.updateTreeModel(data);
-    });
+    this.http.get(req.apiName)
+      .subscribe((data: any) => {
+        // Data extraction from the HTTP response is already done
+        // Display the result
+        console.log(data);
+        this.tree = this.updateTreeModel(data);
+      });
   }
 
   getColor(value) {
