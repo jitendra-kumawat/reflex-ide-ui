@@ -64,6 +64,24 @@ export class LandingScreenComponent implements OnInit {
   };
 
   public tree: TreeModel = {
+    value: 'Programming languages',
+    additionalData: 'folder',
+    settings: {
+      'isCollapsedOnInit': true,
+    },
+    children: [
+      {
+        value: 'Object-oriented',
+        additionalData: 'folder',
+        children: [{ value: 'Java' }, { value: 'C++' }, { value: 'C#' }]
+      },
+      {
+        value: 'Prototype-based',
+        additionalData: 'folder',
+        children: [{ value: 'JavaScript' }, { value: 'CoffeeScript' }, { value: 'Lua' }]
+      }
+    ]
+
 
   };
 
@@ -190,7 +208,7 @@ export class LandingScreenComponent implements OnInit {
     this.selectedDirectoryID = event.node.node.value as string;
     const selectedDir = this.treeComponent.getControllerByNodeId(this.selectedDirectoryID);
     this.historyData.push({ "title": this.selectedDirectoryID });
-    const newNode: TreeModel = this.updateChildrenTreeModel(this.data2);
+    const newNode: TreeModel = this.updateChildrenTreeModel(this.data);
 
     selectedDir.setChildren(newNode);
     selectedDir.expand();
