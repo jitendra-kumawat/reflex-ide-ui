@@ -348,8 +348,10 @@ data2 = [ {
 
   checkInput(event:any){
     if (event.keyCode === 13) {
+      const objDiv = this.elementRef.nativeElement.getElementsByClassName('consoletext')[0];
       this.elementRef.nativeElement.getElementsByClassName('consoletext')[0].innerHTML += event.target.value;
       this.cmdInputModel = "";
+      objDiv.scrollTop = objDiv.scrollHeight;
     }
   }
 
@@ -426,7 +428,7 @@ data2 = [ {
 
     this.selectedDirectoryID = event.node.node.value as string;
     const selectedDir = this.treeComponent.getControllerByNodeId(this.selectedDirectoryID);
-   this.historyData.push(selectedDir);
+   this.historyData.push({"title":this.selectedDirectoryID});
     const newNode: TreeModel = this.updateChildrenTreeModel(this.data2);
 
     selectedDir.setChildren(newNode);
@@ -473,7 +475,7 @@ data2 = [ {
      this.elementRef.nativeElement.getElementsByClassName('settings-content')[0].style.display ='none';
         break;
       case 'history-content':
-     this.elementRef.nativeElement.getElementsByClassName('tree-content')[0].style.display ='noe';
+     this.elementRef.nativeElement.getElementsByClassName('tree-content')[0].style.display ='none';
      this.elementRef.nativeElement.getElementsByClassName('node-content')[0].style.display ='none';
      this.elementRef.nativeElement.getElementsByClassName('history-content')[0].style.display ='';
      this.elementRef.nativeElement.getElementsByClassName('settings-content')[0].style.display ='none';
