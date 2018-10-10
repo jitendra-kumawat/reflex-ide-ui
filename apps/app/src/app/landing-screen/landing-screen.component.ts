@@ -44,13 +44,6 @@ export class LandingScreenComponent implements OnInit {
   ngOnInit() {
     this.usersCount$ = this.store.select(getUserCountSelector);
     this.usersCount$.subscribe(this.onUserCountChange.bind(this));
-
-    this.getUsersCount();
-  }
-
-  getUsersCount() {
-    const requestConfig = getRequestConfig(GET_USERS_COUNT_REQUEST,this.urlbuilder);
-    this.store.dispatch(new ApplicationActions.FetachUserCount(requestConfig));
   }
 
   onUserCountChange(userCount: any) {
