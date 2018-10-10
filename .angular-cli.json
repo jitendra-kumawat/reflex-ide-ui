@@ -1,0 +1,120 @@
+{
+  "$schema": "./node_modules/@nrwl/schematics/src/schema.json",
+  "project": {
+    "name": "reflex-ide",
+    "npmScope": "reflex-ide",
+    "latestMigration": "20180424-add-tsconfig-tools"
+  },
+  "e2e": {
+    "protractor": {
+      "config": "./protractor.conf.js"
+    }
+  },
+  "lint": [
+    {
+      "project": "./tsconfig.spec.json",
+      "exclude": "**/node_modules/**"
+    },
+    {
+      "project": "apps/app/src/tsconfig.app.json",
+      "exclude": "**/node_modules/**"
+    },
+    {
+      "project": "apps/app/e2e/tsconfig.e2e.json",
+      "exclude": "**/node_modules/**"
+    }
+  ],
+  "test": {
+    "karma": {
+      "config": "./karma.conf.js"
+    }
+  },
+  "defaults": {
+    "schematics": {
+      "collection": "@guavus/schematics",
+      "postGenerate": "npm run format",
+      "newProject": [
+        "app",
+        "lib"
+      ]
+    },
+    "styleExt": "less",
+    "component": {}
+  },
+  "warnings": {
+    "typescriptMismatch": false
+  },
+  "apps": [
+    {
+      "name": "app",
+      "root": "apps/app/src",
+      "outDir": "dist/apps/app",
+      "baseHref": "/reflex-ide/",
+      "assets": [
+        "assets",
+        "data",
+        "config",
+        "help",
+        "default.ico",
+        "profile.ico",
+        {
+          "glob": "@(images|svgs)/**/*",
+          "input": "../../../node_modules/@guavus/styleguide/",
+          "output": "./"
+        }
+      ],
+      "index": "index.html",
+      "main": "main.ts",
+      "polyfills": "polyfills.ts",
+      "test": "../../../test.js",
+      "tsconfig": "tsconfig.app.json",
+      "testTsconfig": "../../../tsconfig.spec.json",
+      "prefix": "reflex-ide",
+      "styles": [
+        "styles.less",
+        "theme/gvs-theme.scss",
+        "./assets/font/material-icons/material-icons.css"
+      ],
+      "stylePreprocessorOptions": {
+        "includePaths": [
+          "../../../node_modules/@guavus/styleguide/",
+          "../../../node_modules/"
+        ]
+      },
+      "scripts": [
+        "../../../node_modules/jquery/dist/jquery.min.js",
+        "../../../node_modules/bootstrap/dist/js/bootstrap.min.js",
+        "./libs/jquery-ui/1.12.1/jquery-ui.js"
+      ],
+      "environmentSource": "environments/environment.ts",
+      "environments": {
+        "dev": "environments/environment.ts",
+        "prod": "environments/environment.prod.ts"
+      },
+      "tags": []
+    },
+    {
+      "name": "common",
+      "root": "libs/common/src",
+      "test": "../../../test.js",
+      "prefix": "common",
+      "appRoot": "",
+      "tags": []
+    },
+    {
+      "name": "login",
+      "root": "libs/login/src",
+      "prefix": "login",
+      "test": "../../../test.js",
+      "appRoot": "",
+      "tags": []
+    },
+    {
+      "name": "login-routing",
+      "root": "libs/login-routing/src",
+      "test": "../../../test.js",
+      "appRoot": "",
+      "tags": []
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+@import '@angular/material/theming';
+
+@font-face {
+  font-family: Roboto;
+  src: url(../assets/font/Roboto-Regular.ttf);
+}
+
+$gvs-default-font: mat-typography-config(
+    $font-family: 'Roboto, sans-serif',
+    $headline: mat-typography-level(16px, 20px, 400), // popup title
+    $body-1: mat-typography-level(10px, 10px, 400),
+    $body-2: mat-typography-level(12px, 14px, 400),
+    $button: mat-typography-level(12px, 14px, 400),
+    $title:  mat-typography-level(20px, 32px, 500), // application title
+    $subheading-2: mat-typography-level(16px, 28px, 400),
+    $subheading-1: mat-typography-level(10px, 12px, 400),
+    $display-4: mat-typography-level(10px, 12px, 700),  //
+    $display-3: mat-typography-level(12px, 12px, 700),   // bold
+    $display-2: mat-typography-level(9px, 12px, 400)    // warning
+);

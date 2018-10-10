@@ -1,0 +1,24 @@
+{
+  "currentApp": "Seed Application",
+  "apps": [
+    [
+      {
+    "id": 1,
+    "image": "assets/images/seed_app.svg",
+    "description": "Seed Application",
+    "url": "/",
+    "tooltip": "Seed Application",
+    "isenable": "false",
+    "name": "seed",
+    "isVisible":true
+  }, {
+    "id": 2,
+    "image": "assets/images/um_app.svg",
+    "description": "User Management",
+    "url": "/um/",
+    "tooltip": "User Management",
+    "name": "UM",
+    "isVisible": true
+  }]
+]
+}

@@ -1,0 +1,16 @@
+{
+  "appName": "Seed Application",
+  "logo": "assets/images/guavusLogoLarge.png",
+  "short_logo": "assets/images/guavus_logo.svg",
+  "copyright": "© $year Guavus",
+  "urls": {
+    "auth": "/oauth/1",
+    "base": "/",
+    "um": "/api/v1"
+  },
+  "contextRoot": "/",
+  "timezone": "GMT",
+  "helpURL": "help/index.html",
+  "authorization": "auth",
+  "favicon": "default"
+}

@@ -1,0 +1,98 @@
+{
+  "access_token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX25hbWUiOiJVc2VyIFtpZD0xLCB1c2VySWQ9YWRtaW4sIGZpcnN0TmFtZT1hZG1pbiwgbGFzdE5hbWU9YWRtaW4sIGVtYWlsPWFkbWluQGd1YXZ1cy5jb20sIGlzRW5hYmxlZD10cnVlLCBsYXN0TG9naW5Ib3N0PTEwLjIzMy4xMTcuMCwgbGFzdExvZ2luVGltZXN0YW1wPU1vbiBNYXkgMTQgMDg6NTk6MzYgVVRDIDIwMTgsIHRpbWV6b25lPVVUQywgaW1hZ2VVcmw9bnVsbCwgcm9sZXM9W1JvbGUgW2lkPTEsIHJvbGU9QWRtaW4sIHBlcm1pc3Npb25zPVtTZXJ2aWNlUGVybWlzc2lvbkRhdGEgW2lkPTIsIHNlcnZpY2U9c2VnbWVudHNfaW1wb3J0LCBvcGVyYXRpb25zPTNdLCBTZXJ2aWNlUGVybWlzc2lvbkRhdGEgW2lkPTEsIHNlcnZpY2U9dXNlcm1hbmFnZW1lbnRzZXJ2aWNlLCBvcGVyYXRpb25zPTNdLCBTZXJ2aWNlUGVybWlzc2lvbkRhdGEgW2lkPTQsIHNlcnZpY2U9ZGF0YS1leHRyYWN0aW9uLCBvcGVyYXRpb25zPTNdLCBTZXJ2aWNlUGVybWlzc2lvbkRhdGEgW2lkPTUsIHNlcnZpY2U9dXNlci1kaXN0cmlidXRpb24sIG9wZXJhdGlvbnM9M10sIFNlcnZpY2VQZXJtaXNzaW9uRGF0YSBbaWQ9OSwgc2VydmljZT1zcGUtYXBwbGljYXRpb24sIG9wZXJhdGlvbnM9M10sIFNlcnZpY2VQZXJtaXNzaW9uRGF0YSBbaWQ9Mywgc2VydmljZT1zZWdtZW50c19leHBvcnQsIG9wZXJhdGlvbnM9M10sIFNlcnZpY2VQZXJtaXNzaW9uRGF0YSBbaWQ9Niwgc2VydmljZT10cmVuZGluZy1tb25pdG9yaW5nLCBvcGVyYXRpb25zPTNdLCBTZXJ2aWNlUGVybWlzc2lvbkRhdGEgW2lkPTcsIHNlcnZpY2U9cmVwb3J0cywgb3BlcmF0aW9ucz0zXSwgU2VydmljZVBlcm1pc3Npb25EYXRhIFtpZD04LCBzZXJ2aWNlPWNvbXBhcmF0aXZlLWJyZWFrZG93biwgb3BlcmF0aW9ucz0zXV1dXSwgZ3JvdXA9bnVsbCwgYXBwbGljYXRpb25zPVtBcHBsaWNhdGlvbiBbaWQ9MiwgbmFtZT1NUlgsIGRlc2NyaXB0aW9uPU1hcmtldGluZyBSZWZsZXggQXBwbGljYXRpb24sIHVybD1odHRwOi8vMTkyLjE2OC4xMzMuNzgvbXJ4LywgZGlzcGxheU5hbWU9TWFya2V0aW5nIFJlZmxleF0sIEFwcGxpY2F0aW9uIFtpZD0zLCBuYW1lPVNQRSwgZGVzY3JpcHRpb249U3Vic2NyaWJlciBQcm9maWxpbmcgRW5naW5lLCB1cmw9aHR0cDovLzE5Mi4xNjguMTMzLjc4OjcwODAsIGRpc3BsYXlOYW1lPVN1YnNjcmliZXIgUHJvZmlsaW5nIEVuZ2luZV0sIEFwcGxpY2F0aW9uIFtpZD0xLCBuYW1lPVVNLCBkZXNjcmlwdGlvbj1Vc2VyIG1hbmFnZW1lbnQgYXBwbGljYXRpb24sIHVybD1odHRwOi8vMTkyLjE2OC4xMzMuNzg6ODAvdW0vLCBkaXNwbGF5TmFtZT1Vc2VyIE1hbmFnZW1lbnRdXSwgZGltZW5zaW9uUGVybWlzc2lvbkRhdGE9bnVsbCwgbGFzdE1vZGlmaWVkVGltZXN0YW1wPW51bGwsIGlzTGRhcD1mYWxzZSwgYXV0aFNjaGVtZXM9W11dIiwic2NvcGUiOlsicmVhZCIsIndyaXRlIl0sIm9yZ2FuaXphdGlvbiI6Ikd1YXZ1cyIsImV4cCI6MTUyNjMyNDM3NiwidXNlckRldGFpbHMiOnsiaWQiOjEsInVzZXJJZCI6ImFkbWluIiwicGFzc3dvcmQiOm51bGwsImZpcnN0TmFtZSI6ImFkbWluIiwibGFzdE5hbWUiOiJhZG1pbiIsImVtYWlsIjoiYWRtaW5AZ3VhdnVzLmNvbSIsImlzRW5hYmxlZCI6dHJ1ZSwibGFzdExvZ2luSG9zdCI6IjEwLjIzMy4xMTcuMCIsImxhc3RMb2dpblRpbWVzdGFtcCI6MTUyNjI4ODM3NjcxMywidGltZXpvbmUiOiJVVEMiLCJpbWFnZVVybCI6bnVsbCwicm9sZXMiOlt7ImlkIjoxLCJyb2xlIjoiQWRtaW4iLCJwZXJtaXNzaW9ucyI6W3siaWQiOjIsInNlcnZpY2UiOiJzZWdtZW50c19pbXBvcnQiLCJvcGVyYXRpb25zIjoiMyJ9LHsiaWQiOjEsInNlcnZpY2UiOiJ1c2VybWFuYWdlbWVudHNlcnZpY2UiLCJvcGVyYXRpb25zIjoiMyJ9LHsiaWQiOjQsInNlcnZpY2UiOiJkYXRhLWV4dHJhY3Rpb24iLCJvcGVyYXRpb25zIjoiMyJ9LHsiaWQiOjUsInNlcnZpY2UiOiJ1c2VyLWRpc3RyaWJ1dGlvbiIsIm9wZXJhdGlvbnMiOiIzIn0seyJpZCI6OSwic2VydmljZSI6InNwZS1hcHBsaWNhdGlvbiIsIm9wZXJhdGlvbnMiOiIzIn0seyJpZCI6Mywic2VydmljZSI6InNlZ21lbnRzX2V4cG9ydCIsIm9wZXJhdGlvbnMiOiIzIn0seyJpZCI6Niwic2VydmljZSI6InRyZW5kaW5nLW1vbml0b3JpbmciLCJvcGVyYXRpb25zIjoiMyJ9LHsiaWQiOjcsInNlcnZpY2UiOiJyZXBvcnRzIiwib3BlcmF0aW9ucyI6IjMifSx7ImlkIjo4LCJzZXJ2aWNlIjoiY29tcGFyYXRpdmUtYnJlYWtkb3duIiwib3BlcmF0aW9ucyI6IjMifV19XSwiZ3JvdXAiOm51bGwsImFwcGxpY2F0aW9ucyI6W3siaWQiOjIsIm5hbWUiOiJNUlgiLCJkZXNjcmlwdGlvbiI6Ik1hcmtldGluZyBSZWZsZXggQXBwbGljYXRpb24iLCJ1cmwiOiJodHRwOi8vMTkyLjE2OC4xMzMuNzgvbXJ4LyIsImRpc3BsYXlOYW1lIjoiTWFya2V0aW5nIFJlZmxleCJ9LHsiaWQiOjMsIm5hbWUiOiJTUEUiLCJkZXNjcmlwdGlvbiI6IlN1YnNjcmliZXIgUHJvZmlsaW5nIEVuZ2luZSIsInVybCI6Imh0dHA6Ly8xOTIuMTY4LjEzMy43ODo3MDgwIiwiZGlzcGxheU5hbWUiOiJTdWJzY3JpYmVyIFByb2ZpbGluZyBFbmdpbmUifSx7ImlkIjoxLCJuYW1lIjoiVU0iLCJkZXNjcmlwdGlvbiI6IlVzZXIgbWFuYWdlbWVudCBhcHBsaWNhdGlvbiIsInVybCI6Imh0dHA6Ly8xOTIuMTY4LjEzMy43ODo4MC91bS8iLCJkaXNwbGF5TmFtZSI6IlVzZXIgTWFuYWdlbWVudCJ9XSwiZGltZW5zaW9uUGVybWlzc2lvbkRhdGEiOm51bGwsImxhc3RNb2RpZmllZFRpbWVzdGFtcCI6bnVsbCwiaXNMZGFwIjpmYWxzZSwiYXV0aFNjaGVtZXMiOltdfSwiYXV0aG9yaXRpZXMiOlsiQWRtaW4iXSwianRpIjoiYzNmZTI0Y2EtNTc0NC00MjkwLWIwNjgtZjliYjUzM2E0ZmU2IiwiY2xpZW50X2lkIjoidXNlcl9tYW5hZ2VtZW50In0.AfQ4VriQgkyP-RJZeBYPMzPLGdPtJ3GKLQijPQ4u9-E",
+  "token_type": "bearer",
+  "refresh_token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX25hbWUiOiJVc2VyIFtpZD0xLCB1c2VySWQ9YWRtaW4sIGZpcnN0TmFtZT1hZG1pbiwgbGFzdE5hbWU9YWRtaW4sIGVtYWlsPWFkbWluQGd1YXZ1cy5jb20sIGlzRW5hYmxlZD10cnVlLCBsYXN0TG9naW5Ib3N0PTEwLjIzMy4xMTcuMCwgbGFzdExvZ2luVGltZXN0YW1wPU1vbiBNYXkgMTQgMDg6NTk6MzYgVVRDIDIwMTgsIHRpbWV6b25lPVVUQywgaW1hZ2VVcmw9bnVsbCwgcm9sZXM9W1JvbGUgW2lkPTEsIHJvbGU9QWRtaW4sIHBlcm1pc3Npb25zPVtTZXJ2aWNlUGVybWlzc2lvbkRhdGEgW2lkPTIsIHNlcnZpY2U9c2VnbWVudHNfaW1wb3J0LCBvcGVyYXRpb25zPTNdLCBTZXJ2aWNlUGVybWlzc2lvbkRhdGEgW2lkPTEsIHNlcnZpY2U9dXNlcm1hbmFnZW1lbnRzZXJ2aWNlLCBvcGVyYXRpb25zPTNdLCBTZXJ2aWNlUGVybWlzc2lvbkRhdGEgW2lkPTQsIHNlcnZpY2U9ZGF0YS1leHRyYWN0aW9uLCBvcGVyYXRpb25zPTNdLCBTZXJ2aWNlUGVybWlzc2lvbkRhdGEgW2lkPTUsIHNlcnZpY2U9dXNlci1kaXN0cmlidXRpb24sIG9wZXJhdGlvbnM9M10sIFNlcnZpY2VQZXJtaXNzaW9uRGF0YSBbaWQ9OSwgc2VydmljZT1zcGUtYXBwbGljYXRpb24sIG9wZXJhdGlvbnM9M10sIFNlcnZpY2VQZXJtaXNzaW9uRGF0YSBbaWQ9Mywgc2VydmljZT1zZWdtZW50c19leHBvcnQsIG9wZXJhdGlvbnM9M10sIFNlcnZpY2VQZXJtaXNzaW9uRGF0YSBbaWQ9Niwgc2VydmljZT10cmVuZGluZy1tb25pdG9yaW5nLCBvcGVyYXRpb25zPTNdLCBTZXJ2aWNlUGVybWlzc2lvbkRhdGEgW2lkPTcsIHNlcnZpY2U9cmVwb3J0cywgb3BlcmF0aW9ucz0zXSwgU2VydmljZVBlcm1pc3Npb25EYXRhIFtpZD04LCBzZXJ2aWNlPWNvbXBhcmF0aXZlLWJyZWFrZG93biwgb3BlcmF0aW9ucz0zXV1dXSwgZ3JvdXA9bnVsbCwgYXBwbGljYXRpb25zPVtBcHBsaWNhdGlvbiBbaWQ9MiwgbmFtZT1NUlgsIGRlc2NyaXB0aW9uPU1hcmtldGluZyBSZWZsZXggQXBwbGljYXRpb24sIHVybD1odHRwOi8vMTkyLjE2OC4xMzMuNzgvbXJ4LywgZGlzcGxheU5hbWU9TWFya2V0aW5nIFJlZmxleF0sIEFwcGxpY2F0aW9uIFtpZD0zLCBuYW1lPVNQRSwgZGVzY3JpcHRpb249U3Vic2NyaWJlciBQcm9maWxpbmcgRW5naW5lLCB1cmw9aHR0cDovLzE5Mi4xNjguMTMzLjc4OjcwODAsIGRpc3BsYXlOYW1lPVN1YnNjcmliZXIgUHJvZmlsaW5nIEVuZ2luZV0sIEFwcGxpY2F0aW9uIFtpZD0xLCBuYW1lPVVNLCBkZXNjcmlwdGlvbj1Vc2VyIG1hbmFnZW1lbnQgYXBwbGljYXRpb24sIHVybD1odHRwOi8vMTkyLjE2OC4xMzMuNzg6ODAvdW0vLCBkaXNwbGF5TmFtZT1Vc2VyIE1hbmFnZW1lbnRdXSwgZGltZW5zaW9uUGVybWlzc2lvbkRhdGE9bnVsbCwgbGFzdE1vZGlmaWVkVGltZXN0YW1wPW51bGwsIGlzTGRhcD1mYWxzZSwgYXV0aFNjaGVtZXM9W11dIiwic2NvcGUiOlsicmVhZCIsIndyaXRlIl0sIm9yZ2FuaXphdGlvbiI6Ikd1YXZ1cyIsImF0aSI6ImMzZmUyNGNhLTU3NDQtNDI5MC1iMDY4LWY5YmI1MzNhNGZlNiIsImV4cCI6MTUyNjMyNDM3NiwidXNlckRldGFpbHMiOnsiaWQiOjEsInVzZXJJZCI6ImFkbWluIiwicGFzc3dvcmQiOm51bGwsImZpcnN0TmFtZSI6ImFkbWluIiwibGFzdE5hbWUiOiJhZG1pbiIsImVtYWlsIjoiYWRtaW5AZ3VhdnVzLmNvbSIsImlzRW5hYmxlZCI6dHJ1ZSwibGFzdExvZ2luSG9zdCI6IjEwLjIzMy4xMTcuMCIsImxhc3RMb2dpblRpbWVzdGFtcCI6MTUyNjI4ODM3NjcxMywidGltZXpvbmUiOiJVVEMiLCJpbWFnZVVybCI6bnVsbCwicm9sZXMiOlt7ImlkIjoxLCJyb2xlIjoiQWRtaW4iLCJwZXJtaXNzaW9ucyI6W3siaWQiOjIsInNlcnZpY2UiOiJzZWdtZW50c19pbXBvcnQiLCJvcGVyYXRpb25zIjoiMyJ9LHsiaWQiOjEsInNlcnZpY2UiOiJ1c2VybWFuYWdlbWVudHNlcnZpY2UiLCJvcGVyYXRpb25zIjoiMyJ9LHsiaWQiOjQsInNlcnZpY2UiOiJkYXRhLWV4dHJhY3Rpb24iLCJvcGVyYXRpb25zIjoiMyJ9LHsiaWQiOjUsInNlcnZpY2UiOiJ1c2VyLWRpc3RyaWJ1dGlvbiIsIm9wZXJhdGlvbnMiOiIzIn0seyJpZCI6OSwic2VydmljZSI6InNwZS1hcHBsaWNhdGlvbiIsIm9wZXJhdGlvbnMiOiIzIn0seyJpZCI6Mywic2VydmljZSI6InNlZ21lbnRzX2V4cG9ydCIsIm9wZXJhdGlvbnMiOiIzIn0seyJpZCI6Niwic2VydmljZSI6InRyZW5kaW5nLW1vbml0b3JpbmciLCJvcGVyYXRpb25zIjoiMyJ9LHsiaWQiOjcsInNlcnZpY2UiOiJyZXBvcnRzIiwib3BlcmF0aW9ucyI6IjMifSx7ImlkIjo4LCJzZXJ2aWNlIjoiY29tcGFyYXRpdmUtYnJlYWtkb3duIiwib3BlcmF0aW9ucyI6IjMifV19XSwiZ3JvdXAiOm51bGwsImFwcGxpY2F0aW9ucyI6W3siaWQiOjIsIm5hbWUiOiJNUlgiLCJkZXNjcmlwdGlvbiI6Ik1hcmtldGluZyBSZWZsZXggQXBwbGljYXRpb24iLCJ1cmwiOiJodHRwOi8vMTkyLjE2OC4xMzMuNzgvbXJ4LyIsImRpc3BsYXlOYW1lIjoiTWFya2V0aW5nIFJlZmxleCJ9LHsiaWQiOjMsIm5hbWUiOiJTUEUiLCJkZXNjcmlwdGlvbiI6IlN1YnNjcmliZXIgUHJvZmlsaW5nIEVuZ2luZSIsInVybCI6Imh0dHA6Ly8xOTIuMTY4LjEzMy43ODo3MDgwIiwiZGlzcGxheU5hbWUiOiJTdWJzY3JpYmVyIFByb2ZpbGluZyBFbmdpbmUifSx7ImlkIjoxLCJuYW1lIjoiVU0iLCJkZXNjcmlwdGlvbiI6IlVzZXIgbWFuYWdlbWVudCBhcHBsaWNhdGlvbiIsInVybCI6Imh0dHA6Ly8xOTIuMTY4LjEzMy43ODo4MC91bS8iLCJkaXNwbGF5TmFtZSI6IlVzZXIgTWFuYWdlbWVudCJ9XSwiZGltZW5zaW9uUGVybWlzc2lvbkRhdGEiOm51bGwsImxhc3RNb2RpZmllZFRpbWVzdGFtcCI6bnVsbCwiaXNMZGFwIjpmYWxzZSwiYXV0aFNjaGVtZXMiOltdfSwiYXV0aG9yaXRpZXMiOlsiQWRtaW4iXSwianRpIjoiNmE1NWRlMDMtYjU0Zi00YTBmLTlkOTktZWJlMDA2YTFmNzY1IiwiY2xpZW50X2lkIjoidXNlcl9tYW5hZ2VtZW50In0.K7FQN1i1AV39urlvDPzBmKQlYjBUUzvQRSQMuGN4f4w",
+  "expires_in": 35999,
+  "scope": "read write",
+  "organization": "Guavus",
+  "userDetails": {
+    "id": 1,
+    "userId": "admin",
+    "firstName": "",
+    "lastName": "",
+    "email": "admin@guavus.com",
+    "isEnabled": true,
+    "lastLoginHost": "10.233.117.0",
+    "lastLoginTimestamp": 1526288376713,
+    "timezone": "UTC",
+    "roles": [
+      {
+        "id": 1,
+        "role": "Admin",
+        "permissions": [
+          {
+            "id": 2,
+            "service": "segments_import",
+            "operations": "3"
+          },
+          {
+            "id": 1,
+            "service": "usermanagementservice",
+            "operations": "3"
+          },
+          {
+            "id": 4,
+            "service": "data-extraction",
+            "operations": "3"
+          },
+          {
+            "id": 5,
+            "service": "user-distribution",
+            "operations": "3"
+          },
+          {
+            "id": 9,
+            "service": "spe-application",
+            "operations": "3"
+          },
+          {
+            "id": 3,
+            "service": "segments_export",
+            "operations": "3"
+          },
+          {
+            "id": 6,
+            "service": "trending-monitoring",
+            "operations": "3"
+          },
+          {
+            "id": 7,
+            "service": "reports",
+            "operations": "3"
+          },
+          {
+            "id": 8,
+            "service": "comparative-breakdown",
+            "operations": "3"
+          }
+        ]
+      }
+    ],
+    "applications": [
+      {
+        "id": 2,
+        "name": "MRX",
+        "description": "Marketing Reflex Application",
+        "url": "http://192.168.133.78/mrx/",
+        "displayName": "Marketing Reflex"
+      },
+      {
+        "id": 3,
+        "name": "SPE",
+        "description": "Subscriber Profiling Engine",
+        "url": "http://192.168.133.78:7080",
+        "displayName": "Subscriber Profiling Engine"
+      },
+      {
+        "id": 1,
+        "name": "UM",
+        "description": "User management application",
+        "url": "http://192.168.133.78:80/um/",
+        "displayName": "User Management"
+      }
+    ],
+    "isLdap": false,
+    "authSchemes": []
+  },
+  "jti": "c3fe24ca-5744-4290-b068-f9bb533a4fe6"
+}

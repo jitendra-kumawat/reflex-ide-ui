@@ -1,0 +1,20 @@
+@import '@angular/material/theming';
+@import '@guavus/smart-components/dist/theme';
+@import '@guavus/auth/dist/theme';
+@import './gvs-dark-blue-palette';
+@import './gvs-roboto-font';
+@import '../assets/sass/head';
+@include mat-core($gvs-default-font);
+$gvs-theme-primary: mat-palette($gvs-dark-blue, 800, 600, 900);
+$gvs-theme-accent: mat-palette($mat-light-blue, 500, 200, 900);
+$gvs-theme-warn: mat-palette($mat-red, 500, 200, 900);
+$gvs-theme: mat-light-theme($gvs-theme-primary, $gvs-theme-accent, $gvs-theme-warn);
+@mixin gvs-theme($theme, $font) {
+    // include your component's theme mix-in for font and color here
+    @include gvs-auth-theme($theme, $font);
+    @include gvs-smart-components-theme($theme, $font);
+    @include gvs-body-theme($theme, $font);
+}
+
+@include angular-material-theme($gvs-theme);
+@include gvs-theme($gvs-theme, $gvs-default-font);

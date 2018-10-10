@@ -1,0 +1,40 @@
+@background_color: transparent;
+img {
+  user-select: none;
+  -webkit-user-drag: none;
+  -moz-user-select: none;
+}
+
+.gvs-change-password {
+  .content {
+    padding: 0px !important;
+  }
+}
+
+.passwordForm {
+  >.closePopupIcon {
+    content: url('../images/dialog_close.svg') !important;
+    &:hover {
+      content: url('../images/dialog_close_over.svg') !important;
+    }
+  }
+}
+
+.gvs-help-button {
+  float: right;
+  cursor: pointer;
+  position: relative;
+  width: 28px;
+  height: 28px;
+  margin-top: -11px;
+  padding-top: 4px;
+  right: -9px;
+  &:after {
+    .contentSvg('topMenuHelpIconUp');
+  }
+  &:hover {
+    &:after {
+      .contentSvg('topMenuHelpIconOver');
+    }
+  }
+}

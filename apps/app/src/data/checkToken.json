@@ -1,0 +1,108 @@
+{
+  "user_name": "User [id=1, userId=admin, firstName=admin, lastName=admin, email=admin@guavus.com, isEnabled=true, lastLoginHost=10.233.117.0, lastLoginTimestamp=Mon May 14 06:05:39 UTC 2018, timezone=UTC, imageUrl=null, roles=[Role [id=1, role=Admin, permissions=[ServicePermissionData [id=2, service=segments_import, operations=3], ServicePermissionData [id=1, service=usermanagementservice, operations=3], ServicePermissionData [id=4, service=data-extraction, operations=3], ServicePermissionData [id=5, service=user-distribution, operations=3], ServicePermissionData [id=9, service=spe-application, operations=3], ServicePermissionData [id=3, service=segments_export, operations=3], ServicePermissionData [id=6, service=trending-monitoring, operations=3], ServicePermissionData [id=7, service=reports, operations=3], ServicePermissionData [id=8, service=comparative-breakdown, operations=3]]]], group=null, applications=[Application [id=2, name=MRX, description=Marketing Reflex Application, url=http://192.168.133.78/mrx/, displayName=Marketing Reflex], Application [id=3, name=SPE, description=Subscriber Profiling Engine, url=http://192.168.133.78:7080, displayName=Subscriber Profiling Engine], Application [id=1, name=UM, description=User management application, url=http://192.168.133.78:80/um/, displayName=User Management]], dimensionPermissionData=null, lastModifiedTimestamp=null, isLdap=false, authSchemes=[]]",
+  "scope": [
+    "read",
+    "write"
+  ],
+  "organization": "Guavus",
+  "exp": 1526313939,
+  "userDetails": {
+    "id": 1,
+    "userId": "admin",
+    "password": null,
+    "firstName": "admin",
+    "lastName": "admin",
+    "email": "admin@guavus.com",
+    "isEnabled": true,
+    "lastLoginHost": "10.233.117.0",
+    "lastLoginTimestamp": 1526277939065,
+    "timezone": "UTC",
+    "imageUrl": null,
+    "roles": [
+      {
+        "id": 1,
+        "role": "Admin",
+        "permissions": [
+          {
+            "id": 2,
+            "service": "segments_import",
+            "operations": "3"
+          },
+          {
+            "id": 1,
+            "service": "usermanagementservice",
+            "operations": "3"
+          },
+          {
+            "id": 4,
+            "service": "data-extraction",
+            "operations": "3"
+          },
+          {
+            "id": 5,
+            "service": "user-distribution",
+            "operations": "3"
+          },
+          {
+            "id": 9,
+            "service": "spe-application",
+            "operations": "3"
+          },
+          {
+            "id": 3,
+            "service": "segments_export",
+            "operations": "3"
+          },
+          {
+            "id": 6,
+            "service": "trending-monitoring",
+            "operations": "3"
+          },
+          {
+            "id": 7,
+            "service": "reports",
+            "operations": "3"
+          },
+          {
+            "id": 8,
+            "service": "comparative-breakdown",
+            "operations": "3"
+          }
+        ]
+      }
+    ],
+    "group": null,
+    "applications": [
+      {
+        "id": 2,
+        "name": "MRX",
+        "description": "Marketing Reflex Application",
+        "url": "http://192.168.133.78/mrx/",
+        "displayName": "Marketing Reflex"
+      },
+      {
+        "id": 3,
+        "name": "SPE",
+        "description": "Subscriber Profiling Engine",
+        "url": "http://192.168.133.78:7080",
+        "displayName": "Subscriber Profiling Engine"
+      },
+      {
+        "id": 1,
+        "name": "UM",
+        "description": "User management application",
+        "url": "http://192.168.133.78:80/um/",
+        "displayName": "User Management"
+      }
+    ],
+    "dimensionPermissionData": null,
+    "lastModifiedTimestamp": null,
+    "isLdap": false,
+    "authSchemes": []
+  },
+  "authorities": [
+    "Admin"
+  ],
+  "jti": "4a26d311-2bb2-402a-8054-d79136e60baa",
+  "client_id": "user_management"
+}

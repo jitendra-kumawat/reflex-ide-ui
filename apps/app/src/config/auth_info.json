@@ -1,0 +1,5 @@
+{
+  "client_id": "user_management",
+  "client_secret": "gvs_um",
+  "grant_type": "password"
+}

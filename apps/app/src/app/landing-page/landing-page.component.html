@@ -1,0 +1,15 @@
+<div class="landingPageContainer">
+
+  <!--app header   -->
+  <gvs-header (onModuleChange)="moduleChangeHandler($event)" (onMenuItemSelect)="menuItemSelectHandler($event)" [logo]="logo"
+    [appName]="appName" [modules]="modules" [showSingleModule]="showSingleModule" [rightMenu]="rightMenu" [appSwitcherData]="appSwitcherData"></gvs-header>
+
+  <!-- app body-->
+  <div class="modulebody">
+    <router-outlet></router-outlet>
+  </div>
+
+  <!--app footer -->
+  <gvs-footer [leftText]="leftText" [rightText]="rightText"></gvs-footer>
+
+</div>

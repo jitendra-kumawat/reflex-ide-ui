@@ -1,0 +1,34 @@
+@import '@angular/material/theming';
+
+$gvs-dark-blue: (
+  50: #F7F7FF,
+  100: #F0F0FF,
+  200: #E6E6F8,
+  300: #D6D6E8,
+  400: #B2B2C3,
+  500: #9292A2,
+  600: #6A6A79,
+  700: #565665,
+  800: #383846,
+  900: #171825,
+  A100: #ffffff,
+  A200: #eeeeee,
+  A400: #bdbdbd,
+  A700: #616161,
+  contrast: (
+    50: $dark-primary-text,
+    100: $dark-primary-text,
+    200: $dark-primary-text,
+    300: $dark-primary-text,
+    400: $dark-primary-text,
+    500: $dark-primary-text,
+    600: $light-primary-text,
+    700: $light-primary-text,
+    800: $light-primary-text,
+    900: $light-primary-text,
+    A100: $dark-primary-text,
+    A200: $dark-primary-text,
+    A400: $dark-primary-text,
+    A700: $light-primary-text,
+  )
+);

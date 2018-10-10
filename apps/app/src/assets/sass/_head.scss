@@ -1,0 +1,14 @@
+@mixin gvs-body-theme($theme, $font-config) {
+
+  $gvs-primary: map-get($theme, primary);
+  $gvs-accent: map-get($theme, accent);
+  $gvs-background: map-get($theme, background);
+  $gvs-foreground: map-get($theme, foreground);
+
+body {
+  font-family: mat-font-family($font-config);
+  font-size: mat-font-size($font-config, body-2);
+  font-weight: mat-font-weight($font-config, body-2);
+  background-color: mat-color($gvs-primary, default);
+}
+}
