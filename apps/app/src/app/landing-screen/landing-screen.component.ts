@@ -392,7 +392,12 @@ data2 = [ {
 
           }
            item['additionalData'] = element.longname.startsWith('d') ? 'folder' : 'file';
+<<<<<<< Updated upstream
          root.children.push(item);
+=======
+         console.log(element.filename + ' rr ' )
+         root["children"].push(item);
+>>>>>>> Stashed changes
         });
       }
 
@@ -413,7 +418,8 @@ data2 = [ {
             item['children'] = []
           }
            item['additionalData'] = element.longname.startsWith('d') ? 'folder' : 'file';
-         root.push(item);
+         console.log(element.filename + ' rr ' )
+         root["children"].push(item);
         });
 
       }
@@ -462,8 +468,9 @@ data2 = [ {
     const req:any = _.cloneDeep(DIRLIST_REQUEST);
     req.apiName = DIRLIST_REQUEST.apiName+"?ip="+ip;
     const requestConfig = getRequestConfig(req,this.urlbuilder);
-    this.http.get(requestConfig.url)
+    this.http.request("GET",requestConfig.url)
     .subscribe((data) =>  {
+      console.log(data);
       this.updateTreeModel(data);
     });
   }
