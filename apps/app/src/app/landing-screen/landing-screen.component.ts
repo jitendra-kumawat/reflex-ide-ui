@@ -296,6 +296,8 @@ data2 = [ {
   isNodeSelected = false;
   isSettingSelected = false;
 
+  cmdInputModel:any = "";
+
   constructor(private store: Store<RootState>, private urlbuilder: UrlBuilder,private elementRef: ElementRef) { }
 
   historyData:any = [];
@@ -339,7 +341,8 @@ data2 = [ {
 
   checkInput(event:any){
     if (event.keyCode === 13) {
-      this.elementRef.nativeElement.getElementsByClassName('consoletext')[0].innerHTML += "\n"+event.target.value;
+      this.elementRef.nativeElement.getElementsByClassName('consoletext')[0].innerHTML += event.target.value;
+      this.cmdInputModel = "";
     }
   }
 

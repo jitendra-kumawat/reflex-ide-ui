@@ -49,8 +49,8 @@
     <div class="editor-container">
       <div id="background">
         <div id="console">
-          <textarea rows="5" class="consoletext" id="consoletext" disabled>Write your command here</textarea>
-          <textarea rows="1" class="textinput" id="textinput" (keyup)="checkInput($event);"></textarea>
+          <textarea rows="5" class="consoletext" id="consoletext" disabled></textarea>
+          <textarea rows="1" class="textinput2" id="textinput" (keyup)="checkInput($event);" [(ngModel)]="cmdInputModel"></textarea>
         </div>
       </div>
       <div class="output-conatiner">
