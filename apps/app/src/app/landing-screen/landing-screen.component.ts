@@ -362,10 +362,13 @@ data2 = [ {
       objDiv.scrollTop = objDiv.scrollHeight;
 
       const req:any = _.cloneDeep(CMD_REQUEST);
-      req.apiName = "http://192.168.152.19:5000/" + CMD_REQUEST.apiName+"?ip="+this.selectedIP+"&cmd="+event.target.value;
-      this.http.get(req.apiName)
-      .subscribe((data) =>  {
-        console.log(data);
+      req.apiName = CMD_REQUEST.apiName+"?ip="+this.selectedIP+"&cmd="+event.target.value;
+      const requestConfig = getRequestConfig(req,this.urlbuilder);
+
+      this.dataService.executeRequest('GET', requestConfig, { type: 'text/html' }, '')
+      .subscribe(data => {
+        //console.log(JSON.parse(data));
+        this.elementRef.nativeElement.getElementsByClassName('output')[0].innerHTML = data;
       });
 
     }
