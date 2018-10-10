@@ -41,7 +41,7 @@ export class LandingScreenComponent implements OnInit {
   usersCount$: Observable<any>;
 
   @ViewChild('treeComponent') treeComponent;
-  selectedIP;
+  selectedIP = "192.168.152.19";
   data = [{
     "filename": "dev",
 	"longname": "drwxr-xr-x   19 root     root         3220 Aug  3 05:14 dev",
@@ -342,8 +342,15 @@ data2 = [ {
     this.elementRef.nativeElement.getElementsByClassName('settings-content')[0].style.display ='none';
     this.usersCount$ = this.store.select(getUserCountSelector);
     this.usersCount$.subscribe(this.onUserCountChange.bind(this));
-
-    this.tree = this.updateTreeModel(this.data) as TreeModel;
+    const req:any = _.cloneDeep(DIRLIST_REQUEST);
+    req.apiName = DIRLIST_REQUEST.apiName+"?ip="+this.selectedIP;
+    const requestConfig = getRequestConfig(req,this.urlbuilder);
+    this.http.request("GET",requestConfig.url)
+    .subscribe((data) =>  {
+      console.log(data);
+      this.tree = this.updateTreeModel(data);
+    });
+    // this.tree = this.updateTreeModel(this.data) as TreeModel;
   }
 
   checkInput(event:any){
@@ -392,12 +399,8 @@ data2 = [ {
 
           }
            item['additionalData'] = element.longname.startsWith('d') ? 'folder' : 'file';
-<<<<<<< Updated upstream
-         root.children.push(item);
-=======
          console.log(element.filename + ' rr ' )
          root["children"].push(item);
->>>>>>> Stashed changes
         });
       }
 
@@ -471,7 +474,7 @@ data2 = [ {
     this.http.request("GET",requestConfig.url)
     .subscribe((data) =>  {
       console.log(data);
-      this.updateTreeModel(data);
+      this.tree =  this.updateTreeModel(data);
     });
   }
   navTabClick(key)
