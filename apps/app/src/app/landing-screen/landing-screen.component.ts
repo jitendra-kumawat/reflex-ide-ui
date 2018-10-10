@@ -8,12 +8,12 @@ import {
   getRequestConfig,
   UrlBuilder
   } from '@reflex-ide/common';
+import {
+  NodeEvent,
+  TreeModel
+  } from 'ng2-tree';
 import { Observable } from 'rxjs/Observable';
 import { GET_USERS_COUNT_REQUEST } from './landing-screen-service-config';
-  import {
-    NodeEvent,
-    TreeModel
-    } from 'ng2-tree';
 
 import { RootState, ApplicationState } from '../+state/application.interfaces';
 import * as ApplicationActions from '../+state/application.actions';
@@ -25,23 +25,32 @@ import { UserCountStatus } from '../+state/application.init';
   templateUrl: './landing-screen.component.html',
   styleUrls: ['./landing-screen.component.less']
 })
+
 export class LandingScreenComponent implements OnInit {
   userCount: number;
   usersCount$: Observable<any>;
-  constructor(private store: Store<RootState>,private urlbuilder: UrlBuilder) { }
+
+  isDirectorySelected = true;
+  isNodeSelected = false;
+  isSettingSelected = false;
+
+  constructor(private store: Store<RootState>, private urlbuilder: UrlBuilder) { }
 
   public tree: TreeModel = {
     value: 'Programming languages',
+    additionalData: 'folder',
     settings: {
       'isCollapsedOnInit': true
     },
     children: [
       {
         value: 'Object-oriented',
+        additionalData: 'folder',
         children: [{ value: 'Java' }, { value: 'C++' }, { value: 'C#' }]
       },
       {
         value: 'Prototype-based',
+        additionalData: 'folder',
         children: [{ value: 'JavaScript' }, { value: 'CoffeeScript' }, { value: 'Lua' }]
       }
     ]
@@ -61,8 +70,28 @@ export class LandingScreenComponent implements OnInit {
     }
   }
 
+  updateTreeModel() {
+
+  }
+
   handleSelected(event: NodeEvent) {
-    console.log(event)
+    if (event.node.node.additionalData === 'folder') {
+      this.handleFolderSelection();
+    } else {
+      this.handleFileSelection();
+    }
+  }
+
+  handleFileSelection() {
+    console.log('file selected')
+  }
+
+  handleFolderSelection() {
+    console.log('folder selected');
+  }
+
+  onSearch(value) {
+    console.log(value.target.value);
   }
 
 }

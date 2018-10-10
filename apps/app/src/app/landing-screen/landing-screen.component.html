@@ -11,12 +11,25 @@
     </div><!-- /tabbable -->
   </div>
   <div class="menu-window">
-      <div class="tree-content">
-          <tree [tree]="tree" (nodeSelected)="handleSelected($event)"></tree>
-      </div>
+    <div class="node" *ngIf="isNodeSelected">
+
+    </div>
+    <div class="directory-content" style="padding-top:10px" *ngIf="isDirectorySelected">
+
+      <form class="example-form">
+        <mat-form-field class="example-full-width">
+          <input type="search" matInput placeholder="Search" (search)="onSearch($event)">
+          <mat-icon matSuffix>search</mat-icon>
+        </mat-form-field>
+      </form>
+      <tree [tree]="tree" (nodeSelected)="handleSelected($event)"></tree>
+
+    </div>
+    <div class="setting" *ngIf="isSettingSelected">
+
+    </div>
   </div>
   <div class="editor">
   </div>
 
 </div>
-

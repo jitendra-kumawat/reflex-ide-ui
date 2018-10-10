@@ -3,9 +3,15 @@ import {
   NgModule
   } from '@angular/core';
 import {
+  FormsModule,
+  ReactiveFormsModule
+  } from '@angular/forms';
+import {
   MatDialog,
-  MatDialogRef
+  MatDialogRef,
+  MatIconModule
   } from '@angular/material';
+import { MatInputModule } from '@angular/material';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterModule } from '@angular/router';
@@ -55,6 +61,7 @@ import {
   LoginModule,
   LOGOUT_REQUEST
   } from '@reflex-ide/login';
+import { NgMatSearchBarModule } from 'ng-mat-search-bar';
 import { TreeModule } from 'ng2-tree';
 import { AppComponent } from './app.component';
 import { routes } from './app.routes';
@@ -72,7 +79,6 @@ import {
 
 import { ApplicationEffects } from './+state/application.effects';
 import { reducers, metaReducers, RootState } from './+state/application.interfaces';
-
 export const FAVICONS = {
   cacheBusting: true,
   icons: {
@@ -96,7 +102,12 @@ export const FAVICONS = {
     !environment.production ? StoreDevtoolsModule.instrument() : [],
     StoreRouterConnectingModule,
     BrowserAnimationsModule,
-    TreeModule
+    TreeModule,
+    NgMatSearchBarModule,
+    FormsModule,
+    ReactiveFormsModule,
+    MatInputModule,
+    MatIconModule,
   ],
   declarations: [AppComponent, LandingPageComponent, LandingScreenComponent],
   bootstrap: [AppComponent],
