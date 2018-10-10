@@ -1,13 +1,11 @@
+import { HttpObserve } from '@angular/common/http/src/client';
+import { Injectable } from '@angular/core';
+import { RequestConfig } from '@guavus/auth';
+import { Observable } from 'rxjs/Observable';
 import {
   HttpClient,
   HttpHeaders,
 } from '@angular/common/http';
-import { HttpObserve } from '@angular/common/http/src/client';
-import {
-  Injectable
-} from '@angular/core';
-import { Observable } from 'rxjs/Observable';
-import { RequestConfig } from '@guavus/auth';
 
 export const HTTP_OBSERVE_TYPE: HttpObserve = 'body';
 @Injectable()

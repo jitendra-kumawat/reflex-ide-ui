@@ -23,7 +23,7 @@
           <mat-icon matSuffix>search</mat-icon>
         </mat-form-field>
       </form>
-      <tree [tree]="tree" (nodeSelected)="handleSelected($event)"></tree>
+      <tree #treeComponent [tree]="tree" [settings]="treeSettings" (nodeSelected)="handleSelected($event)"></tree>
 
     </div>
 
