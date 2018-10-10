@@ -73,7 +73,8 @@
       "styles": [
         "styles.less",
         "theme/gvs-theme.scss",
-        "./assets/font/material-icons/material-icons.css"
+        "./assets/font/material-icons/material-icons.css",
+        "../../../node_modules/ng2-tree/styles.css"
       ],
       "stylePreprocessorOptions": {
         "includePaths": [

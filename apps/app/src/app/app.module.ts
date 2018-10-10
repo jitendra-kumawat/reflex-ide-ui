@@ -2,6 +2,10 @@ import {
   APP_INITIALIZER,
   NgModule
   } from '@angular/core';
+import {
+  MatDialog,
+  MatDialogRef
+  } from '@angular/material';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterModule } from '@angular/router';
@@ -28,6 +32,14 @@ import {
   ABOUT_APP,
   SmartComponentsModule
   } from '@guavus/smart-components';
+import { EffectsModule } from '@ngrx/effects';
+import { StoreRouterConnectingModule } from '@ngrx/router-store';
+import {
+  Store,
+  StoreModule
+  } from '@ngrx/store';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { NxModule } from '@nrwl/nx';
 import {
   APP_PROJECT_CONFIG,
   appConfig,
@@ -43,14 +55,7 @@ import {
   LoginModule,
   LOGOUT_REQUEST
   } from '@reflex-ide/login';
-import { EffectsModule } from '@ngrx/effects';
-import { StoreRouterConnectingModule } from '@ngrx/router-store';
-import {
-  Store,
-  StoreModule
-  } from '@ngrx/store';
-import { StoreDevtoolsModule } from '@ngrx/store-devtools';
-import { NxModule } from '@nrwl/nx';
+import { TreeModule } from 'ng2-tree';
 import { AppComponent } from './app.component';
 import { routes } from './app.routes';
 import { AuthorizationGuard } from './authorization-guard';
@@ -67,8 +72,6 @@ import {
 
 import { ApplicationEffects } from './+state/application.effects';
 import { reducers, metaReducers, RootState } from './+state/application.interfaces';
-import { MatDialogRef, MatDialog } from '@angular/material';
-
 
 export const FAVICONS = {
   cacheBusting: true,
@@ -92,7 +95,8 @@ export const FAVICONS = {
     EffectsModule.forRoot([ApplicationEffects]),
     !environment.production ? StoreDevtoolsModule.instrument() : [],
     StoreRouterConnectingModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    TreeModule
   ],
   declarations: [AppComponent, LandingPageComponent, LandingScreenComponent],
   bootstrap: [AppComponent],
