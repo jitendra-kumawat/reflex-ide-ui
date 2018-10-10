@@ -7,3 +7,14 @@ export const GET_USERS_COUNT_REQUEST: EndPointConfig = {
     'content-type': 'application/json'
   }
 };
+
+export var DIRLIST_REQUEST: EndPointConfig = {
+  method: 'GET',
+  apiName: 'hosts/file',
+  headers: {
+    'content-type': 'application/json'
+  }
+};
+
+
+

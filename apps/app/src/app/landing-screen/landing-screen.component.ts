@@ -1,4 +1,5 @@
 import { HttpErrorResponse } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import {
   Component,
   ElementRef,
@@ -6,17 +7,23 @@ import {
   ViewChild
   } from '@angular/core';
 import { Store } from '@ngrx/store';
-import {
-  getRequestConfig,
-  UrlBuilder
-  } from '@reflex-ide/common';
+import { EndPointConfig } from '@reflex-ide/common';
+import * as _ from 'lodash';
 import {
   Ng2TreeSettings,
   NodeEvent,
   TreeModel
   } from 'ng2-tree';
 import { Observable } from 'rxjs/Observable';
-import { GET_USERS_COUNT_REQUEST } from './landing-screen-service-config';
+import {
+  DIRLIST_REQUEST,
+  GET_USERS_COUNT_REQUEST
+  } from './landing-screen-service-config';
+import { UserCountServcie } from '../landing-screen/user-count.service';
+import {
+  getRequestConfig,
+  UrlBuilder,
+  } from '@reflex-ide/common';
 
 import { RootState, ApplicationState } from '../+state/application.interfaces';
 import * as ApplicationActions from '../+state/application.actions';
@@ -298,7 +305,7 @@ data2 = [ {
 
   cmdInputModel:any = "";
 
-  constructor(private store: Store<RootState>, private urlbuilder: UrlBuilder,private elementRef: ElementRef) { }
+  constructor(private store: Store<RootState>, private urlbuilder: UrlBuilder,private elementRef: ElementRef,private service: UserCountServcie,private http: HttpClient) { }
 
   historyData:any = [];
   selectedDirectoryID = '';
@@ -440,9 +447,13 @@ data2 = [ {
     this.elementRef.nativeElement.getElementsByClassName('settings-content')[0].style.display ='none';
     document.getElementsByClassName("node")[0].classList.remove("active");
     document.getElementsByClassName("home")[0].classList.add("active");
-
-
-
+    const req:any = _.cloneDeep(DIRLIST_REQUEST);
+    req.apiName = DIRLIST_REQUEST.apiName+"?ip="+ip;
+    const requestConfig = getRequestConfig(req,this.urlbuilder);
+    this.http.get(requestConfig.url)
+    .subscribe((data) =>  {
+      this.updateTreeModel(data);
+    });
   }
   navTabClick(key)
   {
