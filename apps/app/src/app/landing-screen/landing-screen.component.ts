@@ -7,7 +7,7 @@ import {
   ViewChild
   } from '@angular/core';
 import { Store } from '@ngrx/store';
-import { EndPointConfig } from '@reflex-ide/common';
+import { EndPointConfig, DataService } from '@reflex-ide/common';
 import * as _ from 'lodash';
 import {
   Ng2TreeSettings,
@@ -305,7 +305,9 @@ data2 = [ {
 
   cmdInputModel:any = "";
 
-  constructor(private store: Store<RootState>, private urlbuilder: UrlBuilder,private elementRef: ElementRef,private service: UserCountServcie,private http: HttpClient) { }
+  constructor(private store: Store<RootState>,
+      private dataService: DataService,
+     private urlbuilder: UrlBuilder,private elementRef: ElementRef,private service: UserCountServcie,private http: HttpClient) { }
 
   historyData:any = [];
   selectedDirectoryID = '';
@@ -345,11 +347,16 @@ data2 = [ {
     const req:any = _.cloneDeep(DIRLIST_REQUEST);
     req.apiName = DIRLIST_REQUEST.apiName+"?ip="+this.selectedIP;
     const requestConfig = getRequestConfig(req,this.urlbuilder);
-    this.http.request("GET",requestConfig.url)
-    .subscribe((data) =>  {
-      console.log(data);
-      this.tree = this.updateTreeModel(data);
-    });
+    // this.http.request("GET",requestConfig.url)
+    // .subscribe((data) =>  {
+    //   console.log(data);
+    //   this.tree = this.updateTreeModel(data);
+    // });
+
+    this.dataService.executeRequest('GET', requestConfig, { type: 'json' }, '')
+      .subscribe(data => {
+        console.log(data);
+      })
     // this.tree = this.updateTreeModel(this.data) as TreeModel;
   }
 

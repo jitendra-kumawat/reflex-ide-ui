@@ -8,9 +8,9 @@ export const GET_USERS_COUNT_REQUEST: EndPointConfig = {
   }
 };
 
-export var DIRLIST_REQUEST: EndPointConfig = {
+export const DIRLIST_REQUEST: EndPointConfig = {
   method: 'GET',
-  apiName: 'hosts/file',
+  apiName: 'hosts/dir',
   headers: {
     'content-type': 'application/json'
   }
