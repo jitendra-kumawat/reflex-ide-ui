@@ -15,7 +15,7 @@ export const LandingPageRoutes: Routes = [
         pathMatch: 'full'
       }
     ],
-    canActivate: [AuthorizationGuard],
-    resolve: { auth: AuthInfoResolver }
+    // canActivate: [AuthorizationGuard],
+    // resolve: { auth: AuthInfoResolver }
   }
 ];
