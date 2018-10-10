@@ -318,23 +318,7 @@ data2 = [ {
   };
 
   public tree: TreeModel = {
-    value: 'Programming languages',
-    additionalData: 'folder',
-    settings: {
-      'isCollapsedOnInit': true,
-    },
-    children: [
-      {
-        value: 'Object-oriented',
-        additionalData: 'folder',
-        children: [{ value: 'Java' }, { value: 'C++' }, { value: 'C#' }]
-      },
-      {
-        value: 'Prototype-based',
-        additionalData: 'folder',
-        children: [{ value: 'JavaScript' }, { value: 'CoffeeScript' }, { value: 'Lua' }]
-      }
-    ]
+
   };
 
   ngOnInit() {
