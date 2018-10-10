@@ -1,7 +1,8 @@
 import { HttpErrorResponse } from '@angular/common/http';
 import {
   Component,
-  OnInit
+  OnInit,
+  ElementRef
   } from '@angular/core';
 import { Store } from '@ngrx/store';
 import {
@@ -34,7 +35,7 @@ export class LandingScreenComponent implements OnInit {
   isNodeSelected = false;
   isSettingSelected = false;
 
-  constructor(private store: Store<RootState>, private urlbuilder: UrlBuilder) { }
+  constructor(private store: Store<RootState>, private urlbuilder: UrlBuilder,private elementRef: ElementRef) { }
 
   public tree: TreeModel = {
     value: 'Programming languages',
@@ -57,6 +58,10 @@ export class LandingScreenComponent implements OnInit {
   };
 
   ngOnInit() {
+    this.elementRef.nativeElement.getElementsByClassName('tree-content')[0].style.display ='none';
+       this.elementRef.nativeElement.getElementsByClassName('node-content')[0].style.display ='';
+       this.elementRef.nativeElement.getElementsByClassName('history-content')[0].style.display ='none';
+       this.elementRef.nativeElement.getElementsByClassName('settings-content')[0].style.display ='none';
     this.usersCount$ = this.store.select(getUserCountSelector);
     this.usersCount$.subscribe(this.onUserCountChange.bind(this));
   }
@@ -92,6 +97,42 @@ export class LandingScreenComponent implements OnInit {
 
   onSearch(value) {
     console.log(value.target.value);
+  }
+
+  navTabClick(key)
+  {
+
+    switch (key) {
+      case 'tree-content':
+       this.elementRef.nativeElement.getElementsByClassName('tree-content')[0].style.display ='';
+       this.elementRef.nativeElement.getElementsByClassName('node-content')[0].style.display ='none';
+       this.elementRef.nativeElement.getElementsByClassName('history-content')[0].style.display ='none';
+       this.elementRef.nativeElement.getElementsByClassName('settings-content')[0].style.display ='none';
+
+        break;
+      case 'node-content':
+     this.elementRef.nativeElement.getElementsByClassName('tree-content')[0].style.display ='none';
+     this.elementRef.nativeElement.getElementsByClassName('node-content')[0].style.display ='';
+     this.elementRef.nativeElement.getElementsByClassName('history-content')[0].style.display ='none';
+     this.elementRef.nativeElement.getElementsByClassName('settings-content')[0].style.display ='none';
+        break;
+      case 'history-content':
+     this.elementRef.nativeElement.getElementsByClassName('tree-content')[0].style.display ='noe';
+     this.elementRef.nativeElement.getElementsByClassName('node-content')[0].style.display ='none';
+     this.elementRef.nativeElement.getElementsByClassName('history-content')[0].style.display ='';
+     this.elementRef.nativeElement.getElementsByClassName('settings-content')[0].style.display ='none';
+        break;
+      case 'settings-content':
+     this.elementRef.nativeElement.getElementsByClassName('tree-content')[0].style.display ='none';
+     this.elementRef.nativeElement.getElementsByClassName('node-content')[0].style.display ='none';
+     this.elementRef.nativeElement.getElementsByClassName('history-content')[0].style.display ='';
+     this.elementRef.nativeElement.getElementsByClassName('settings-content')[0].style.display ='none';
+        break;
+
+      default:
+        break;
+    }
+    // alert(item);
   }
 
 }

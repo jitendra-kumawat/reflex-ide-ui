@@ -3,18 +3,16 @@
   <div class="menu-list">
     <div class="tabs-left">
       <ul class="nav nav-tabs">
-        <li class="active"><a href="#a" data-toggle="tab"><span class="glyphicon glyphicon-folder-open"></span></a></li>
-        <li><a href="#b" data-toggle="tab"><span class="glyphicon glyphicon-hdd"></span></a></li>
-        <li><a href="#d" data-toggle="tab"><span class="glyphicon glyphicon-time"></span></a></li>
-        <li><a href="#f" data-toggle="tab"><span class="glyphicon glyphicon-cog"></span></a></li>
+        <li  (click)="navTabClick('tree-content')"><a href="#" data-toggle="tab"><span class="glyphicon glyphicon-folder-open"></span></a></li>
+        <li class="active" (click)="navTabClick('node-content')" ><a href="#" data-toggle="tab"><span class="glyphicon glyphicon-hdd"></span></a></li>
+        <li (click)="navTabClick('history-content')" ><a href="#" data-toggle="tab"><span class="glyphicon glyphicon-time"></span></a></li>
+        <li (click)="navTabClick('settings-content')" ><a href="#" data-toggle="tab"><span class="glyphicon glyphicon-cog"></span></a></li>
       </ul>
     </div><!-- /tabbable -->
   </div>
   <div class="menu-window">
-    <div class="node" *ngIf="isNodeSelected">
 
-    </div>
-    <div class="directory-content" style="padding-top:10px" *ngIf="isDirectorySelected">
+    <div class="tree-content" style="padding-top:10px" >
 
       <form class="example-form">
         <mat-form-field class="example-full-width">
@@ -25,9 +23,16 @@
       <tree [tree]="tree" (nodeSelected)="handleSelected($event)"></tree>
 
     </div>
-    <div class="setting" *ngIf="isSettingSelected">
 
-    </div>
+  <div class="node-content">
+    <span>Nodes</span>
+</div>
+ <div class="history-content">
+  <span>History</span>
+</div>
+<div class="settings-content">
+<span>Settings</span>
+</div>
   </div>
   <div class="editor">
   </div>
