@@ -23,7 +23,10 @@
           <mat-icon matSuffix>search</mat-icon>
         </mat-form-field>
       </form>
-      <tree #treeComponent [tree]="tree" [settings]="treeSettings" (nodeSelected)="handleSelected($event)"></tree>
+      <div style="width: 100%; height: 600px;overflow: scroll;">
+          <tree #treeComponent [tree]="tree" [settings]="treeSettings" (nodeSelected)="handleSelected($event)"></tree>
+      </div>
+
 
     </div>
 
@@ -38,7 +41,7 @@
     </div>
     <div class="history-content">
       <ul>
-        <li *ngFor="let historyItem of historyData">{{ historyItem.title }}</li>
+        <li *ngFor="let historyItem of historyData">{{ historyItem }}</li>
       </ul>
     </div>
     <div class="settings-content">

@@ -368,9 +368,12 @@ data2 = [ {
            const item:Object = {};
            item['value'] = element.filename;
            item['id'] = element.filename;
-           item['children'] = [];
+
+          if (element.longname.startsWith('d')){
+            item['children'] = []
+
+          }
            item['additionalData'] = element.longname.startsWith('d') ? 'folder' : 'file';
-         console.log(element.filename + ' rr ' )
          root.children.push(item);
         });
       }
@@ -380,20 +383,20 @@ data2 = [ {
 
   updateChildrenTreeModel(data): any {
 
-    const root:Object = {};
-    root['children'] = [];
+    const root = [];
 
       if (data && data.length > 0) {
         data.forEach(element => {
            const item:Object = {};
            item['value'] = element.filename;
            item['id'] = element.filename;
-           item['children'] = [];
-           item['additionalData'] = element.longname.startsWith('d') ? 'folder' : 'file';
-         console.log(element.filename + ' rr ' )
-         root.children.push(item);
-        });
 
+          if (element.longname.startsWith('d')){
+            item['children'] = []
+          }
+           item['additionalData'] = element.longname.startsWith('d') ? 'folder' : 'file';
+         root.push(item);
+        });
 
       }
 
@@ -415,11 +418,12 @@ data2 = [ {
   handleFolderSelection(event: NodeEvent) {
 
     this.selectedDirectoryID = event.node.node.value as string;
-    console.log('folder selected : ' + event.node.node.value);
-    let selectedDir = this.treeComponent.getControllerByNodeId(this.selectedDirectoryID);
+    const selectedDir = this.treeComponent.getControllerByNodeId(this.selectedDirectoryID);
+   this.historyData.push(selectedDir);
+    const newNode: TreeModel = this.updateChildrenTreeModel(this.data2);
 
-    let newNode: TreeModel = this.updateChildrenTreeModel(this.data2);
-    selectedDir.addChild(newNode);
+    selectedDir.setChildren(newNode);
+    selectedDir.expand();
 
   }
 
@@ -436,6 +440,8 @@ data2 = [ {
     this.elementRef.nativeElement.getElementsByClassName('settings-content')[0].style.display ='none';
     document.getElementsByClassName("node")[0].classList.remove("active");
     document.getElementsByClassName("home")[0].classList.add("active");
+
+
 
   }
   navTabClick(key)
