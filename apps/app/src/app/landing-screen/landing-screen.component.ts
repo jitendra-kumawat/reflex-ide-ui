@@ -336,8 +336,8 @@ data2 = [ {
   };
 
   ngOnInit() {
-    this.elementRef.nativeElement.getElementsByClassName('tree-content')[0].style.display ='none';
-    this.elementRef.nativeElement.getElementsByClassName('node-content')[0].style.display ='';
+    this.elementRef.nativeElement.getElementsByClassName('tree-content')[0].style.display ='';
+    this.elementRef.nativeElement.getElementsByClassName('node-content')[0].style.display ='none';
     this.elementRef.nativeElement.getElementsByClassName('history-content')[0].style.display ='none';
     this.elementRef.nativeElement.getElementsByClassName('settings-content')[0].style.display ='none';
     this.usersCount$ = this.store.select(getUserCountSelector);
