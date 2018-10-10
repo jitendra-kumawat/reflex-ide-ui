@@ -16,8 +16,8 @@ import {
   } from 'ng2-tree';
 import { Observable } from 'rxjs/Observable';
 import {
-  DIRLIST_REQUEST,
-  CMD_REQUEST
+  CMD_REQUEST,
+  DIRLIST_REQUEST
   } from './landing-screen-service-config';
 import { UserCountServcie } from '../landing-screen/user-count.service';
 import {
@@ -41,7 +41,7 @@ export class LandingScreenComponent implements OnInit {
   usersCount$: Observable<any>;
 
   @ViewChild('treeComponent') treeComponent;
-  selectedIP = "192.168.152.19";
+  selectedIP = '192.168.152.19';
   data = [{
     "filename": "dev",
 	"longname": "drwxr-xr-x   19 root     root         3220 Aug  3 05:14 dev",
@@ -393,6 +393,7 @@ data2 = [ {
            const item:Object = {};
            item['value'] = element.filename;
            item['id'] = element.filename;
+           item['path'] = element.filename;
 
           if (element.longname.startsWith('d')){
             item['children'] = []
@@ -416,6 +417,7 @@ data2 = [ {
            const item:Object = {};
            item['value'] = element.filename;
            item['id'] = element.filename;
+           item['path'] = this.selectedDirectoryID + '/' + element.filename;
 
           if (element.longname.startsWith('d')){
             item['children'] = []
@@ -461,6 +463,7 @@ data2 = [ {
   }
 
   nodeTabClick(ip){
+
     this.selectedIP = ip;
     this.elementRef.nativeElement.getElementsByClassName('tree-content')[0].style.display ='';
     this.elementRef.nativeElement.getElementsByClassName('node-content')[0].style.display ='none';
@@ -468,6 +471,7 @@ data2 = [ {
     this.elementRef.nativeElement.getElementsByClassName('settings-content')[0].style.display ='none';
     document.getElementsByClassName("node")[0].classList.remove("active");
     document.getElementsByClassName("home")[0].classList.add("active");
+
     const req:any = _.cloneDeep(DIRLIST_REQUEST);
     req.apiName = DIRLIST_REQUEST.apiName+"?ip="+ip;
     const requestConfig = getRequestConfig(req,this.urlbuilder);
@@ -477,6 +481,15 @@ data2 = [ {
       this.tree =  this.updateTreeModel(data);
     });
   }
+
+  getColor(value) {
+    if (this.selectedIP === value) {
+      return '#C8C8C8'
+    } else {
+      return '';
+    }
+  }
+
   navTabClick(key)
   {
 
