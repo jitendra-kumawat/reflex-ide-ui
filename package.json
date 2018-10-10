@@ -5,7 +5,7 @@
   "scripts": {
     "ng": "ng",
     "start:aot": "ng serve --port 2018 --aot",
-    "start": "ng serve --port 1986 --aot=false",
+    "start": "ng serve --port 2018 --aot=false",
     "build": "ng build",
     "prebuild:prod": "npm rebuild node-sass --force",
     "build:prod": "node --stack_size=4048 node_modules/.bin/ng build --prod --environment=prod --aot",
