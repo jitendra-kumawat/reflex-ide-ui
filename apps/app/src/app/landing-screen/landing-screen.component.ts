@@ -353,7 +353,7 @@ data2 = [ {
     //   this.tree = this.updateTreeModel(data);
     // });
 
-    this.dataService.executeRequest('GET', requestConfig, { type: 'json' }, '')
+    this.dataService.executeRequest('GET', requestConfig, { type: 'text/html' }, '')
       .subscribe(data => {
         console.log(data);
       })
